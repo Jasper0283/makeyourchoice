@@ -4,167 +4,170 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BrickPick — The Best LEGO Sets Per Theme</title>
-  <meta name="description" content="Expert LEGO picks across every theme. Compare prices on Amazon.nl and bol.com. City, Technic, Star Wars, Icons, Harry Potter, Botanicals and more."/>
+  <title>BrickPick — Find Your Perfect LEGO Set</title>
+  <meta name="description" content="Answer 5 quick questions and find the perfect LEGO set. Real set numbers, real prices, buy on Amazon.nl or bol.com."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet"/>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
       --red:#E3000B;--yellow:#FFD700;--blue:#006CB7;--green:#00a651;
-      --bol:#0000a4;--amazon:#FF9900;--dark:#1a1a2e;--light:#f9f6f0;
-      --card:#fff;--muted:#666;--r:16px;
+      --bol:#0000a4;--amazon:#FF9900;--dark:#1a1a2e;--light:#f5f3ef;
+      --card:#fff;--muted:#666;--r:14px;
     }
     html{scroll-behavior:smooth}
     body{font-family:'Nunito',sans-serif;background:var(--light);color:var(--dark);overflow-x:hidden}
 
 ```
 /* NAV */
-nav{background:var(--dark);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:300;box-shadow:0 4px 20px rgba(0,0,0,.3)}
-.logo{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--yellow);letter-spacing:2px;text-decoration:none}
+nav{background:var(--dark);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:300;box-shadow:0 3px 16px rgba(0,0,0,.35)}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;color:var(--yellow);letter-spacing:2px;text-decoration:none}
 .logo span{color:var(--red)}
-.nav-links{display:flex;gap:1.5rem;list-style:none}
-.nav-links a{color:#ccc;text-decoration:none;font-weight:700;font-size:.85rem;transition:color .2s}
-.nav-links a:hover{color:var(--yellow)}
-@media(max-width:700px){.nav-links{display:none}}
+.nav-r{display:flex;gap:1.2rem;align-items:center}
+.nav-r a{color:#ccc;text-decoration:none;font-weight:700;font-size:.82rem;transition:color .2s}
+.nav-r a:hover{color:var(--yellow)}
+.nav-btn{background:var(--red);color:#fff!important;padding:.35rem .9rem;border-radius:50px;font-size:.78rem!important}
+.nav-btn:hover{background:#c0000a!important}
+@media(max-width:600px){.nav-r a:not(.nav-btn){display:none}}
 
 /* HERO */
-.hero{background:var(--dark);padding:5rem 2rem 4rem;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 110%,rgba(0,108,183,.28) 0%,transparent 65%),radial-gradient(ellipse at 85% 10%,rgba(227,0,11,.15) 0%,transparent 50%)}
-.studs{display:flex;justify-content:center;gap:10px;margin-bottom:2rem;position:relative}
-.stud{width:28px;height:28px;border-radius:50%;box-shadow:0 4px 0 rgba(0,0,0,.35),inset 0 -3px 6px rgba(0,0,0,.2);animation:bounce 2.2s infinite}
+.hero{background:var(--dark);padding:4rem 2rem 3.5rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(0,108,183,.3),transparent 65%),radial-gradient(ellipse at 80% 5%,rgba(227,0,11,.15),transparent 50%)}
+.studs{display:flex;justify-content:center;gap:9px;margin-bottom:1.75rem;position:relative}
+.stud{width:26px;height:26px;border-radius:50%;box-shadow:0 4px 0 rgba(0,0,0,.35),inset 0 -3px 5px rgba(0,0,0,.2);animation:sb 2.2s infinite}
 .stud:nth-child(1){background:var(--yellow);animation-delay:0s}
 .stud:nth-child(2){background:var(--red);animation-delay:.1s}
 .stud:nth-child(3){background:var(--blue);animation-delay:.2s}
 .stud:nth-child(4){background:var(--green);animation-delay:.3s}
 .stud:nth-child(5){background:var(--yellow);animation-delay:.4s}
-.stud:nth-child(6){background:var(--red);animation-delay:.5s}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,6rem);color:#fff;line-height:1;position:relative;animation:up .7s .15s both}
+@keyframes sb{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.6rem,7vw,5.5rem);color:#fff;line-height:1.05;position:relative;animation:fu .7s .1s both}
 .hero h1 em{color:var(--yellow);font-style:normal}
-.hero p{color:#aab;font-size:1.15rem;margin:1rem auto;max-width:560px;font-weight:700;position:relative;animation:up .7s .3s both}
-.hero-cta{display:inline-block;background:var(--red);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:2px;padding:.9rem 2.5rem;border-radius:50px;text-decoration:none;box-shadow:0 6px 0 #8b0007;transition:transform .15s,box-shadow .15s;animation:up .7s .45s both;position:relative;margin-top:1.5rem}
-.hero-cta:hover{transform:translateY(-3px);box-shadow:0 9px 0 #8b0007}
-@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero p{color:#aab;font-size:1.1rem;margin:.9rem auto;max-width:520px;font-weight:700;position:relative;animation:fu .7s .25s both}
+.hero-cta{display:inline-block;background:var(--yellow);color:var(--dark);font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;padding:.8rem 2.2rem;border-radius:50px;text-decoration:none;box-shadow:0 5px 0 #b59600;transition:transform .15s,box-shadow .15s;animation:fu .7s .4s both;position:relative;margin-top:1.2rem;cursor:pointer;border:none}
+.hero-cta:hover{transform:translateY(-3px);box-shadow:0 8px 0 #b59600}
+@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-/* FILTER */
-.filters{background:var(--yellow);padding:1rem 1.5rem;display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;align-items:center;position:sticky;top:64px;z-index:200;box-shadow:0 4px 12px rgba(0,0,0,.1)}
-.fl{font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--dark)}
-.fb{background:var(--dark);color:#fff;border:none;padding:.42rem 1rem;border-radius:50px;font-family:'Nunito',sans-serif;font-weight:800;font-size:.78rem;cursor:pointer;transition:background .2s,transform .15s;white-space:nowrap}
-.fb:hover,.fb.on{background:var(--red);transform:scale(1.05)}
+/* ── QUIZ SECTION ── */
+#quiz-section{max-width:860px;margin:2.5rem auto;padding:0 1.25rem}
 
-/* DISCLOSURE */
-.disc{background:#fff8e1;border-left:4px solid var(--yellow);padding:.75rem 1.25rem;font-size:.8rem;color:var(--muted);max-width:1260px;margin:1.25rem auto .5rem;border-radius:0 8px 8px 0}
-.disc a{color:var(--blue)}
+.progress-bar{background:#e0ddd7;border-radius:50px;height:8px;margin-bottom:2rem;overflow:hidden}
+.progress-fill{background:linear-gradient(90deg,var(--yellow),var(--red));height:100%;border-radius:50px;transition:width .4s ease}
 
-/* THEME SECTIONS */
-.theme-section{max-width:1260px;margin:0 auto;padding:3rem 1.5rem 1rem}
-.theme-header{display:flex;align-items:center;gap:1rem;margin-bottom:.3rem}
-.theme-icon{font-size:2.2rem}
-.theme-title{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;letter-spacing:2px}
-.theme-title em{color:var(--red);font-style:normal}
-.theme-sub{color:var(--muted);font-weight:700;font-size:.88rem;margin-bottom:1.75rem}
+.q-card{background:var(--card);border-radius:20px;padding:2.25rem 2.5rem;box-shadow:0 6px 30px rgba(0,0,0,.1);display:none;animation:fu .35s ease}
+.q-card.active{display:block}
+.q-step{font-size:.75rem;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:.6rem}
+.q-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:1px;margin-bottom:.35rem;line-height:1.1}
+.q-sub{color:var(--muted);font-weight:700;font-size:.9rem;margin-bottom:1.75rem}
+.q-options{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.75rem}
+.q-opt{background:#f5f3ef;border:2px solid #e0ddd7;border-radius:12px;padding:1rem 1.1rem;cursor:pointer;transition:all .2s;text-align:left;font-family:'Nunito',sans-serif}
+.q-opt:hover{border-color:var(--blue);background:#edf4fb;transform:translateY(-2px)}
+.q-opt.chosen{border-color:var(--yellow);background:#fff8e1;box-shadow:0 0 0 3px rgba(255,215,0,.3)}
+.q-opt .opt-icon{font-size:1.6rem;margin-bottom:.4rem;display:block}
+.q-opt .opt-label{font-weight:900;font-size:.92rem;display:block;margin-bottom:.15rem}
+.q-opt .opt-hint{font-size:.75rem;color:var(--muted);display:block}
 
-/* LEGEND */
-.legend{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;background:#fff;border-radius:10px;padding:.7rem 1.25rem;box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:1.75rem;font-size:.8rem;font-weight:700;max-width:1260px;margin-left:auto;margin-right:auto}
-.ld{display:flex;align-items:center;gap:.4rem}
-.dot{width:12px;height:12px;border-radius:50%}
+.q-nav{display:flex;justify-content:space-between;align-items:center;margin-top:1.5rem}
+.btn-back{background:none;border:2px solid #ddd;color:var(--muted);font-family:'Nunito',sans-serif;font-weight:800;font-size:.85rem;padding:.55rem 1.2rem;border-radius:50px;cursor:pointer;transition:all .2s}
+.btn-back:hover{border-color:var(--dark);color:var(--dark)}
+.btn-next{background:var(--blue);color:#fff;border:none;font-family:'Nunito',sans-serif;font-weight:900;font-size:.88rem;padding:.6rem 1.6rem;border-radius:50px;cursor:pointer;box-shadow:0 4px 0 #004a80;transition:transform .15s,box-shadow .15s;opacity:.4;pointer-events:none}
+.btn-next.ready{opacity:1;pointer-events:auto}
+.btn-next.ready:hover{transform:translateY(-2px);box-shadow:0 6px 0 #004a80}
 
-/* GRID */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));gap:1.5rem}
+/* ── RESULTS ── */
+#results-section{max-width:1200px;margin:0 auto;padding:0 1.25rem 4rem;display:none}
+.results-header{text-align:center;margin-bottom:2rem}
+.results-header h2{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;letter-spacing:2px;margin-bottom:.3rem}
+.results-header h2 em{color:var(--red);font-style:normal}
+.results-header p{color:var(--muted);font-weight:700}
+.restart-btn{background:var(--dark);color:var(--yellow);border:none;font-family:'Nunito',sans-serif;font-weight:900;font-size:.85rem;padding:.6rem 1.4rem;border-radius:50px;cursor:pointer;margin-top:.9rem;transition:background .2s}
+.restart-btn:hover{background:var(--red)}
 
-/* CARD */
-.card{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.08);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;border:2px solid transparent}
-.card:hover{transform:translateY(-6px);box-shadow:0 14px 36px rgba(0,0,0,.14);border-color:var(--yellow)}
-.cimg{position:relative;background:linear-gradient(135deg,#e8f4fd,#fef9e7);height:185px;display:flex;align-items:center;justify-content:center;padding:1.25rem}
-.cimg img{max-width:100%;max-height:150px;object-fit:contain;transition:transform .3s}
-.card:hover .cimg img{transform:scale(1.06)}
-.badge{position:absolute;top:10px;left:10px;color:#fff;font-weight:900;font-size:.66rem;padding:3px 9px;border-radius:50px;text-transform:uppercase;letter-spacing:1px}
-.b-red{background:var(--red)}.b-blue{background:var(--blue)}.b-green{background:var(--green)}.b-dark{background:var(--dark)}
-.cbody{padding:1.1rem;flex:1;display:flex;flex-direction:column}
-.ctheme{font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--blue);margin-bottom:.25rem}
-.ctitle{font-weight:900;font-size:.97rem;margin-bottom:.3rem;line-height:1.35}
-.cmeta{color:var(--muted);font-size:.78rem;margin-bottom:.45rem}
-.cstars{color:var(--yellow);font-size:.82rem}
-.cstars span{color:var(--muted);font-size:.75rem;margin-left:3px}
-.cdesc{color:#555;font-size:.81rem;line-height:1.55;margin:.45rem 0;flex:1}
-.cfoot{margin-top:auto;padding-top:.85rem;border-top:1px solid #f0f0f0}
-.prow{display:flex;align-items:baseline;gap:.4rem;margin-bottom:.65rem}
-.price{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--dark)}
-.pnote{font-size:.73rem;color:var(--muted);font-weight:700}
-.bgrp{display:flex;gap:.45rem;flex-wrap:wrap}
+.results-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.6rem}
 
-/* BUTTONS */
-.btn-d{flex:1.3;background:var(--dark);color:var(--yellow);border:2px solid var(--dark);font-weight:900;font-size:.76rem;padding:.48rem .65rem;border-radius:50px;cursor:pointer;transition:background .2s,color .2s,transform .15s;text-align:center;white-space:nowrap}
-.btn-d:hover{background:var(--yellow);color:var(--dark);transform:translateY(-2px)}
-.btn-a{flex:1;background:var(--amazon);color:#111;border:2px solid var(--amazon);font-weight:900;font-size:.73rem;padding:.48rem .55rem;border-radius:50px;text-decoration:none;transition:filter .2s,transform .15s;text-align:center;white-space:nowrap}
-.btn-a:hover{filter:brightness(1.1);transform:translateY(-2px)}
-.btn-b{flex:1;background:var(--bol);color:#fff;border:2px solid var(--bol);font-weight:900;font-size:.73rem;padding:.48rem .55rem;border-radius:50px;text-decoration:none;transition:filter .2s,transform .15s;text-align:center;white-space:nowrap}
-.btn-b:hover{filter:brightness(1.3);transform:translateY(-2px)}
+/* RESULT CARD */
+.rc{background:var(--card);border-radius:18px;overflow:hidden;box-shadow:0 5px 22px rgba(0,0,0,.09);display:flex;flex-direction:column;border:2px solid transparent;transition:transform .2s,box-shadow .2s,border-color .2s}
+.rc:hover{transform:translateY(-5px);box-shadow:0 14px 36px rgba(0,0,0,.14);border-color:var(--yellow)}
+.rc-img{position:relative;background:linear-gradient(135deg,#e8f4fd,#fef9e7);height:200px;display:flex;align-items:center;justify-content:center;padding:1.25rem}
+.rc-img img{max-width:100%;max-height:165px;object-fit:contain;transition:transform .3s}
+.rc:hover .rc-img img{transform:scale(1.05)}
+.match-badge{position:absolute;top:10px;right:10px;background:var(--green);color:#fff;font-weight:900;font-size:.68rem;padding:4px 10px;border-radius:50px;text-transform:uppercase;letter-spacing:.8px}
+.set-num-badge{position:absolute;top:10px;left:10px;background:rgba(26,26,46,.75);color:#fff;font-weight:900;font-size:.68rem;padding:4px 9px;border-radius:50px;letter-spacing:.5px}
+.rc-body{padding:1.15rem 1.2rem;flex:1;display:flex;flex-direction:column}
+.rc-theme{font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--blue);margin-bottom:.25rem}
+.rc-title{font-weight:900;font-size:1rem;margin-bottom:.3rem;line-height:1.3}
+.rc-meta{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.5rem}
+.rc-tag{background:#f0f0f0;color:#444;font-size:.72rem;font-weight:800;padding:2px 8px;border-radius:50px}
+.rc-stars{color:var(--yellow);font-size:.82rem;margin-bottom:.4rem}
+.rc-stars span{color:var(--muted);font-size:.75rem;margin-left:3px}
+.rc-why{background:#f0faf4;border-left:3px solid var(--green);padding:.6rem .8rem;border-radius:0 8px 8px 0;font-size:.8rem;color:#2d6a3f;font-weight:700;margin:.5rem 0 .75rem;flex:1}
+.rc-foot{padding-top:.8rem;border-top:1px solid #f0f0f0}
+.rc-price{font-family:'Bebas Neue',sans-serif;font-size:1.55rem;color:var(--dark);margin-bottom:.65rem}
+.rc-price span{font-family:'Nunito',sans-serif;font-size:.75rem;color:var(--muted);font-weight:700}
+.rc-btns{display:flex;gap:.45rem}
+.btn-detail{flex:1.2;background:var(--dark);color:var(--yellow);border:2px solid var(--dark);font-weight:900;font-size:.75rem;padding:.48rem .5rem;border-radius:50px;cursor:pointer;transition:all .2s;text-align:center;white-space:nowrap}
+.btn-detail:hover{background:var(--yellow);color:var(--dark)}
+.btn-am{flex:1;background:var(--amazon);color:#111;border:2px solid var(--amazon);font-weight:900;font-size:.72rem;padding:.48rem .4rem;border-radius:50px;text-decoration:none;text-align:center;white-space:nowrap;transition:filter .2s,transform .15s}
+.btn-am:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.btn-bo{flex:1;background:var(--bol);color:#fff;border:2px solid var(--bol);font-weight:900;font-size:.72rem;padding:.48rem .4rem;border-radius:50px;text-decoration:none;text-align:center;white-space:nowrap;transition:filter .2s,transform .15s}
+.btn-bo:hover{filter:brightness(1.3);transform:translateY(-2px)}
+
+/* BROWSE ALL */
+#browse-section{max-width:1200px;margin:0 auto;padding:2rem 1.25rem 4rem;display:none}
+.browse-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem}
+.browse-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:2px}
+.browse-title em{color:var(--red);font-style:normal}
+.browse-filters{display:flex;gap:.5rem;flex-wrap:wrap}
+.bf{background:var(--dark);color:#fff;border:none;padding:.4rem .95rem;border-radius:50px;font-family:'Nunito',sans-serif;font-weight:800;font-size:.78rem;cursor:pointer;transition:background .2s,transform .15s}
+.bf:hover,.bf.on{background:var(--red);transform:scale(1.04)}
 
 /* MODAL */
-.overlay{display:none;position:fixed;inset:0;background:rgba(10,10,30,.8);z-index:500;align-items:center;justify-content:center;padding:1rem}
-.overlay.open{display:flex}
-.modal{background:#fff;border-radius:20px;max-width:640px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 30px 80px rgba(0,0,0,.4);animation:min .25s ease}
-@keyframes min{from{opacity:0;transform:scale(.93)}to{opacity:1;transform:scale(1)}}
-.mimg{background:linear-gradient(135deg,#e8f4fd,#fef9e7);padding:2.5rem;text-align:center;border-radius:20px 20px 0 0;position:relative}
-.mimg img{max-height:210px;object-fit:contain}
-.mcls{position:absolute;top:13px;right:14px;background:rgba(0,0,0,.15);border:none;color:#333;width:33px;height:33px;border-radius:50%;font-size:1rem;cursor:pointer;font-weight:900;display:flex;align-items:center;justify-content:center;transition:background .2s}
-.mcls:hover{background:rgba(0,0,0,.35);color:#fff}
-.mbody{padding:1.75rem 2rem 2rem}
-.mtheme{font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;color:var(--blue);margin-bottom:.3rem}
-.mtitle{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:1px;margin-bottom:.45rem}
-.mmeta{color:var(--muted);font-size:.85rem;font-weight:700;margin-bottom:.6rem}
-.mstars{font-size:1rem;color:var(--yellow);margin-bottom:1rem}
-.mstars span{color:var(--muted);font-size:.85rem}
-.mdesc{color:#444;line-height:1.75;font-size:.93rem;margin-bottom:1.2rem}
-.mfeats h4{font-weight:900;margin-bottom:.45rem;font-size:.88rem}
-.mfeats ul{list-style:none;display:flex;flex-direction:column;gap:.3rem;margin-bottom:1.4rem}
-.mfeats li{font-size:.86rem;color:#444;padding-left:1.3rem;position:relative}
-.mfeats li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:900}
-.mprow{display:flex;align-items:baseline;gap:.5rem;margin-bottom:1.2rem}
-.mprice{font-family:'Bebas Neue',sans-serif;font-size:2.1rem;color:var(--dark)}
-.mpnote{color:var(--muted);font-size:.8rem;font-weight:700}
-.mbgrp{display:flex;gap:.7rem;flex-wrap:wrap}
-.mba{flex:1;background:var(--amazon);color:#111;font-weight:900;font-size:.92rem;padding:.72rem 1.1rem;border-radius:50px;text-decoration:none;text-align:center;box-shadow:0 4px 0 #b36a00;transition:transform .15s,box-shadow .15s}
+.ov{display:none;position:fixed;inset:0;background:rgba(10,10,30,.8);z-index:500;align-items:center;justify-content:center;padding:1rem}
+.ov.open{display:flex}
+.modal{background:#fff;border-radius:20px;max-width:620px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 30px 80px rgba(0,0,0,.4);animation:mi .25s ease}
+@keyframes mi{from{opacity:0;transform:scale(.93)}to{opacity:1;transform:scale(1)}}
+.m-top{background:linear-gradient(135deg,#e8f4fd,#fef9e7);padding:2.25rem;text-align:center;border-radius:20px 20px 0 0;position:relative}
+.m-top img{max-height:200px;object-fit:contain}
+.m-cls{position:absolute;top:12px;right:14px;background:rgba(0,0,0,.14);border:none;color:#333;width:32px;height:32px;border-radius:50%;font-size:.95rem;cursor:pointer;font-weight:900;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.m-cls:hover{background:rgba(0,0,0,.3);color:#fff}
+.m-body{padding:1.6rem 2rem 2rem}
+.m-sn{font-size:.72rem;font-weight:900;letter-spacing:1px;color:var(--muted);margin-bottom:.2rem}
+.m-title{font-family:'Bebas Neue',sans-serif;font-size:1.85rem;letter-spacing:1px;margin-bottom:.4rem}
+.m-meta{color:var(--muted);font-size:.85rem;font-weight:700;margin-bottom:.6rem}
+.m-stars{font-size:.95rem;color:var(--yellow);margin-bottom:.9rem}
+.m-stars span{color:var(--muted);font-size:.82rem}
+.m-desc{color:#444;line-height:1.75;font-size:.92rem;margin-bottom:1.1rem}
+.m-feats{margin-bottom:1.35rem}
+.m-feats h4{font-weight:900;margin-bottom:.45rem;font-size:.87rem}
+.m-feats ul{list-style:none;display:flex;flex-direction:column;gap:.28rem}
+.m-feats li{font-size:.85rem;color:#444;padding-left:1.2rem;position:relative}
+.m-feats li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:900}
+.m-price{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--dark);margin-bottom:1.1rem}
+.m-price span{font-family:'Nunito',sans-serif;font-size:.78rem;color:var(--muted);font-weight:700}
+.m-btns{display:flex;gap:.65rem;flex-wrap:wrap}
+.mba{flex:1;background:var(--amazon);color:#111;font-weight:900;font-size:.9rem;padding:.7rem 1rem;border-radius:50px;text-decoration:none;text-align:center;box-shadow:0 4px 0 #b36a00;transition:transform .15s,box-shadow .15s}
 .mba:hover{transform:translateY(-3px);box-shadow:0 7px 0 #b36a00}
-.mbb{flex:1;background:var(--bol);color:#fff;font-weight:900;font-size:.92rem;padding:.72rem 1.1rem;border-radius:50px;text-decoration:none;text-align:center;box-shadow:0 4px 0 #00006e;transition:transform .15s,box-shadow .15s}
+.mbb{flex:1;background:var(--bol);color:#fff;font-weight:900;font-size:.9rem;padding:.7rem 1rem;border-radius:50px;text-decoration:none;text-align:center;box-shadow:0 4px 0 #00006e;transition:transform .15s,box-shadow .15s}
 .mbb:hover{transform:translateY(-3px);box-shadow:0 7px 0 #00006e}
 
-/* QUIZ */
-.quiz-wrap{max-width:1260px;margin:0 auto;padding:1rem 1.5rem 3.5rem}
-.quiz{background:var(--blue);border-radius:24px;padding:3.5rem 2.5rem;text-align:center;color:#fff;position:relative;overflow:hidden}
-.quiz::before{content:'🧱';font-size:9rem;position:absolute;right:-10px;bottom:-25px;opacity:.1}
-.quiz h2{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;letter-spacing:2px;margin-bottom:.5rem}
-.quiz>p{opacity:.85;font-weight:700;font-size:1.02rem}
-.qq{font-size:.88rem;opacity:.7;margin:1.2rem 0 .45rem;font-weight:700}
-.qopts{display:flex;flex-wrap:wrap;gap:.65rem;justify-content:center}
-.qo{background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.3);color:#fff;font-family:'Nunito',sans-serif;font-weight:800;padding:.55rem 1.2rem;border-radius:50px;cursor:pointer;transition:all .2s;font-size:.85rem}
-.qo:hover,.qo.sel{background:var(--yellow);color:var(--dark);border-color:var(--yellow)}
-.qres{display:none;background:rgba(255,255,255,.15);border-radius:12px;padding:1.2rem;margin-top:1.2rem}
-.qres h3{font-size:1.05rem;margin-bottom:.4rem}
-.qbtns{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-top:.7rem}
+/* LEGEND */
+.legend{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;background:#fff;border-radius:10px;padding:.65rem 1.2rem;box-shadow:0 2px 10px rgba(0,0,0,.07);margin-bottom:1.5rem;font-size:.78rem;font-weight:700}
+.ld{display:flex;align-items:center;gap:.35rem}
+.dot{width:11px;height:11px;border-radius:50%}
 
-/* AGE */
-.age-wrap{max-width:1260px;margin:0 auto;padding:2rem 1.5rem 3rem}
-.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:1.1rem}
-.ac{background:var(--card);border-radius:var(--r);padding:1.6rem 1.1rem;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.07);cursor:pointer;transition:transform .2s,box-shadow .2s;border-top:5px solid var(--blue);text-decoration:none;color:inherit;display:block}
-.ac:nth-child(2){border-color:var(--red)}.ac:nth-child(3){border-color:var(--green)}.ac:nth-child(4){border-color:var(--yellow)}.ac:nth-child(5){border-color:var(--blue)}
-.ac:hover{transform:translateY(-5px);box-shadow:0 10px 26px rgba(0,0,0,.12)}
-.ac .ai{font-size:2.2rem;margin-bottom:.65rem}
-.ac h3{font-weight:900;font-size:.95rem;margin-bottom:.3rem}
-.ac p{color:var(--muted);font-size:.8rem}
+/* DISC */
+.disc{background:#fff8e1;border-left:4px solid var(--yellow);padding:.7rem 1.2rem;font-size:.78rem;color:var(--muted);max-width:1200px;margin:.5rem auto 0;border-radius:0 8px 8px 0}
+.disc a{color:var(--blue)}
 
-footer{background:var(--dark);color:#888;text-align:center;padding:2.5rem 2rem;font-size:.85rem}
-.flogo{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--yellow);display:block;margin-bottom:.4rem}
+footer{background:var(--dark);color:#888;text-align:center;padding:2.2rem 2rem;font-size:.82rem;margin-top:3rem}
+.flogo{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;color:var(--yellow);display:block;margin-bottom:.4rem}
 .flogo span{color:var(--red)}
 footer a{color:#aaa;text-decoration:none}
 footer a:hover{color:var(--yellow)}
 
-/* BACK TO TOP */
-.tot{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--dark);color:var(--yellow);border:none;width:44px;height:44px;border-radius:50%;font-size:1.2rem;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:400;display:none;align-items:center;justify-content:center;transition:background .2s}
-.tot:hover{background:var(--red)}
+.tot{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--dark);color:var(--yellow);border:none;width:42px;height:42px;border-radius:50%;font-size:1.1rem;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:400;display:none;align-items:center;justify-content:center}
 .tot.show{display:flex}
+.tot:hover{background:var(--red)}
 ```
 
   </style>
@@ -173,127 +176,184 @@ footer a:hover{color:var(--yellow)}
 
 <nav>
   <a class="logo" href="#"><span>Brick</span>Pick</a>
-  <ul class="nav-links">
-    <li><a href="#city">City</a></li>
-    <li><a href="#technic">Technic</a></li>
-    <li><a href="#starwars">Star Wars</a></li>
-    <li><a href="#icons">Icons</a></li>
-    <li><a href="#hp">Harry Potter</a></li>
-    <li><a href="#more">More Themes</a></li>
-    <li><a href="#quiz">Find My Set</a></li>
-  </ul>
+  <div class="nav-r">
+    <a href="#browse-section" onclick="showBrowse()">Browse All</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="affiliate-disclosure.html">Disclosure</a>
+    <a href="#quiz-section" class="nav-btn" onclick="restartQuiz()">Find My Set</a>
+  </div>
 </nav>
+
+<!-- HERO -->
 
 <div class="hero">
   <div class="studs">
     <div class="stud"></div><div class="stud"></div><div class="stud"></div>
-    <div class="stud"></div><div class="stud"></div><div class="stud"></div>
+    <div class="stud"></div><div class="stud"></div>
   </div>
-  <h1>Every LEGO Theme.<br/><em>Best Sets. Best Price.</em></h1>
-  <p>We picked the top sets from every theme — compare Amazon.nl & bol.com prices before you buy.</p>
-  <a href="#city" class="hero-cta">Browse All Themes ↓</a>
-</div>
-
-<!-- FILTER -->
-
-<div class="filters" id="filters">
-  <span class="fl">JUMP TO:</span>
-  <button class="fb" onclick="jump('city')">🏙️ City</button>
-  <button class="fb" onclick="jump('technic')">⚙️ Technic</button>
-  <button class="fb" onclick="jump('starwars')">🚀 Star Wars</button>
-  <button class="fb" onclick="jump('icons')">🏛️ Icons</button>
-  <button class="fb" onclick="jump('hp')">⚡ Harry Potter</button>
-  <button class="fb" onclick="jump('ninjago')">🐉 Ninjago</button>
-  <button class="fb" onclick="jump('minecraft')">⛏️ Minecraft</button>
-  <button class="fb" onclick="jump('botanical')">🌸 Botanical</button>
-  <button class="fb" onclick="jump('creator')">🔨 Creator</button>
-  <button class="fb" onclick="jump('friends')">💜 Friends</button>
-  <button class="fb" onclick="jump('marvel')">🦸 Marvel</button>
-  <button class="fb" onclick="jump('disney')">✨ Disney</button>
-  <button class="fb" onclick="jump('speed')">🏎️ Speed Champions</button>
-  <button class="fb" onclick="jump('ideas')">💡 Ideas</button>
-  <button class="fb" onclick="jump('duplo')">🍼 DUPLO</button>
+  <h1>Find Your<br/><em>Perfect LEGO Set</em></h1>
+  <p>Answer 5 questions — we match you with the 3 to 5 sets that fit you best. Real set numbers, real prices, two stores to compare.</p>
+  <button class="hero-cta" onclick="document.getElementById('quiz-section').scrollIntoView({behavior:'smooth'})">Start the Quiz ↓</button>
 </div>
 
 <div class="disc">
-  <strong>Affiliate disclosure:</strong> BrickPick earns a small commission via Amazon.nl &amp; bol.com affiliate links — at no extra cost to you. <a href="affiliate-disclosure.html">Read more</a>.
+  <strong>Affiliate disclosure:</strong> BrickPick earns a small commission via Amazon.nl &amp; bol.com affiliate links at no extra cost to you. <a href="affiliate-disclosure.html">Read more</a>.
 </div>
-
-<!-- LEGEND (once, globally) -->
-
-<div class="legend" style="margin-top:0">
-  <strong>Button colours:</strong>
-  <div class="ld"><div class="dot" style="background:var(--dark)"></div> Full details on this page</div>
-  <div class="ld"><div class="dot" style="background:var(--amazon)"></div> Buy on Amazon.nl</div>
-  <div class="ld"><div class="dot" style="background:var(--bol)"></div> Buy on bol.com</div>
-</div>
-
-<!-- SETS ARE RENDERED HERE BY JS -->
-
-<div id="sections"></div>
 
 <!-- QUIZ -->
 
-<div class="quiz-wrap" id="quiz">
-  <div class="quiz">
-    <h2>🧱 Not Sure? Find Your Set</h2>
-    <p>Two quick questions — we'll recommend the perfect set</p>
-    <p class="qq">Who is this for?</p>
-    <div class="qopts" id="qa">
-      <button class="qo" onclick="qpick('age','child',this)">Child 2–7</button>
-      <button class="qo" onclick="qpick('age','kid',this)">Kid 8–12</button>
-      <button class="qo" onclick="qpick('age','teen',this)">Teen 13–17</button>
-      <button class="qo" onclick="qpick('age','adult',this)">Adult 18+</button>
+<div id="quiz-section">
+  <div class="progress-bar"><div class="progress-fill" id="pbar" style="width:0%"></div></div>
+
+  <!-- Q1 -->
+
+  <div class="q-card active" id="q1">
+    <div class="q-step">Step 1 of 5</div>
+    <div class="q-title">Who is this for? 👤</div>
+    <div class="q-sub">We'll adjust our recommendations based on the builder</div>
+    <div class="q-options">
+      <div class="q-opt" onclick="pick(1,'age','toddler',this)"><span class="opt-icon">🍼</span><span class="opt-label">Toddler (2–4)</span><span class="opt-hint">DUPLO, big bricks</span></div>
+      <div class="q-opt" onclick="pick(1,'age','child',this)"><span class="opt-icon">🧒</span><span class="opt-label">Child (5–7)</span><span class="opt-hint">Simple builds, playsets</span></div>
+      <div class="q-opt" onclick="pick(1,'age','kid',this)"><span class="opt-icon">👦</span><span class="opt-label">Kid (8–12)</span><span class="opt-hint">Themes, adventures</span></div>
+      <div class="q-opt" onclick="pick(1,'age','teen',this)"><span class="opt-icon">🧑</span><span class="opt-label">Teen (13–17)</span><span class="opt-hint">Complex builds</span></div>
+      <div class="q-opt" onclick="pick(1,'age','adult',this)"><span class="opt-icon">👩</span><span class="opt-label">Adult (18+)</span><span class="opt-hint">Display, collect, relax</span></div>
     </div>
-    <p class="qq">Budget?</p>
-    <div class="qopts" id="qb">
-      <button class="qo" onclick="qpick('budget','low',this)">Under €50</button>
-      <button class="qo" onclick="qpick('budget','mid',this)">€50–€150</button>
-      <button class="qo" onclick="qpick('budget','high',this)">€150–€400</button>
-      <button class="qo" onclick="qpick('budget','premium',this)">€400+</button>
+    <div class="q-nav">
+      <span></span>
+      <button class="btn-next" id="n1" onclick="goTo(2)">Next →</button>
     </div>
-    <div class="qres" id="qres">
-      <h3>Our Pick For You:</h3>
-      <p id="qtxt"></p>
-      <div class="qbtns">
-        <a id="qa-a" href="#" target="_blank" class="mba" style="font-size:.83rem;padding:.55rem 1rem">🛒 Amazon.nl</a>
-        <a id="qa-b" href="#" target="_blank" class="mbb" style="font-size:.83rem;padding:.55rem 1rem">🛒 bol.com</a>
-      </div>
+  </div>
+
+  <!-- Q2 -->
+
+  <div class="q-card" id="q2">
+    <div class="q-step">Step 2 of 5</div>
+    <div class="q-title">What's the budget? 💶</div>
+    <div class="q-sub">We'll only show sets in your price range</div>
+    <div class="q-options">
+      <div class="q-opt" onclick="pick(2,'budget','tiny',this)"><span class="opt-icon">💰</span><span class="opt-label">Under €30</span><span class="opt-hint">Small sets, great starters</span></div>
+      <div class="q-opt" onclick="pick(2,'budget','small',this)"><span class="opt-icon">💰💰</span><span class="opt-label">€30–€79</span><span class="opt-hint">Mid-size sets</span></div>
+      <div class="q-opt" onclick="pick(2,'budget','mid',this)"><span class="opt-icon">💰💰💰</span><span class="opt-label">€80–€199</span><span class="opt-hint">Large builds</span></div>
+      <div class="q-opt" onclick="pick(2,'budget','large',this)"><span class="opt-icon">💎</span><span class="opt-label">€200–€499</span><span class="opt-hint">Collector sets</span></div>
+      <div class="q-opt" onclick="pick(2,'budget','epic',this)"><span class="opt-icon">👑</span><span class="opt-label">€500+</span><span class="opt-hint">Ultimate sets</span></div>
+    </div>
+    <div class="q-nav">
+      <button class="btn-back" onclick="goTo(1)">← Back</button>
+      <button class="btn-next" id="n2" onclick="goTo(3)">Next →</button>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+
+  <div class="q-card" id="q3">
+    <div class="q-step">Step 3 of 5</div>
+    <div class="q-title">What's the main interest? 🎯</div>
+    <div class="q-sub">Pick the theme that excites most</div>
+    <div class="q-options">
+      <div class="q-opt" onclick="pick(3,'interest','action',this)"><span class="opt-icon">⚔️</span><span class="opt-label">Action & Adventure</span><span class="opt-hint">Star Wars, Ninjago, Marvel</span></div>
+      <div class="q-opt" onclick="pick(3,'interest','vehicles',this)"><span class="opt-icon">🚗</span><span class="opt-label">Vehicles & Speed</span><span class="opt-hint">Technic, Speed Champions</span></div>
+      <div class="q-opt" onclick="pick(3,'interest','city',this)"><span class="opt-icon">🏙️</span><span class="opt-label">City Life</span><span class="opt-hint">City, Friends, Creator</span></div>
+      <div class="q-opt" onclick="pick(3,'interest','fantasy',this)"><span class="opt-icon">🧙</span><span class="opt-label">Fantasy & Magic</span><span class="opt-hint">Harry Potter, Disney</span></div>
+      <div class="q-opt" onclick="pick(3,'interest','nature',this)"><span class="opt-icon">🌿</span><span class="opt-label">Nature & Calm</span><span class="opt-hint">Botanical, Animals</span></div>
+      <div class="q-opt" onclick="pick(3,'interest','display',this)"><span class="opt-icon">🏛️</span><span class="opt-label">Display & Collect</span><span class="opt-hint">Icons, Ideas, Landmarks</span></div>
+      <div class="q-opt" onclick="pick(3,'interest','gaming',this)"><span class="opt-icon">🎮</span><span class="opt-label">Gaming</span><span class="opt-hint">Minecraft, Mario, Fortnite</span></div>
+    </div>
+    <div class="q-nav">
+      <button class="btn-back" onclick="goTo(2)">← Back</button>
+      <button class="btn-next" id="n3" onclick="goTo(4)">Next →</button>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+
+  <div class="q-card" id="q4">
+    <div class="q-step">Step 4 of 5</div>
+    <div class="q-title">How much building time? ⏱️</div>
+    <div class="q-sub">How long should the build experience last?</div>
+    <div class="q-options">
+      <div class="q-opt" onclick="pick(4,'time','quick',this)"><span class="opt-icon">⚡</span><span class="opt-label">Quick (1–2 hrs)</span><span class="opt-hint">Under 500 pieces</span></div>
+      <div class="q-opt" onclick="pick(4,'time','afternoon',this)"><span class="opt-icon">☀️</span><span class="opt-label">An afternoon (3–5 hrs)</span><span class="opt-hint">500–1,500 pieces</span></div>
+      <div class="q-opt" onclick="pick(4,'time','weekend',this)"><span class="opt-icon">📅</span><span class="opt-label">A weekend (6–15 hrs)</span><span class="opt-hint">1,500–4,000 pieces</span></div>
+      <div class="q-opt" onclick="pick(4,'time','epic',this)"><span class="opt-icon">🏆</span><span class="opt-label">Epic project (15+ hrs)</span><span class="opt-hint">4,000+ pieces</span></div>
+    </div>
+    <div class="q-nav">
+      <button class="btn-back" onclick="goTo(3)">← Back</button>
+      <button class="btn-next" id="n4" onclick="goTo(5)">Next →</button>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+
+  <div class="q-card" id="q5">
+    <div class="q-step">Step 5 of 5</div>
+    <div class="q-title">What happens after building? 🎁</div>
+    <div class="q-sub">What should the set be used for after it's built?</div>
+    <div class="q-options">
+      <div class="q-opt" onclick="pick(5,'purpose','play',this)"><span class="opt-icon">🎭</span><span class="opt-label">Play & Rebuild</span><span class="opt-hint">Break it apart, build again</span></div>
+      <div class="q-opt" onclick="pick(5,'purpose','display',this)"><span class="opt-icon">🖼️</span><span class="opt-label">Display on a shelf</span><span class="opt-hint">Looks great, stays built</span></div>
+      <div class="q-opt" onclick="pick(5,'purpose','gift',this)"><span class="opt-icon">🎁</span><span class="opt-label">Give as a gift</span><span class="opt-hint">Impressive, well-known set</span></div>
+      <div class="q-opt" onclick="pick(5,'purpose','collect',this)"><span class="opt-icon">📦</span><span class="opt-label">Collect & invest</span><span class="opt-hint">Iconic, likely to gain value</span></div>
+    </div>
+    <div class="q-nav">
+      <button class="btn-back" onclick="goTo(4)">← Back</button>
+      <button class="btn-next" id="n5" onclick="showResults()">🔍 Show My Matches</button>
     </div>
   </div>
 </div>
 
-<!-- BY AGE -->
+<!-- RESULTS -->
 
-<div class="age-wrap" id="ages">
-  <div class="theme-header"><div class="theme-icon">🎂</div><div class="theme-title">Shop By <em>Age</em></div></div>
-  <p class="theme-sub">The right challenge at the right stage</p>
-  <div class="agrid">
-    <a href="https://www.bol.com/nl/nl/s/?searchtext=LEGO+Duplo" class="ac" target="_blank"><div class="ai">🍼</div><h3>Age 2–4</h3><p>DUPLO big bricks</p></a>
-    <a href="https://www.bol.com/nl/nl/s/?searchtext=LEGO+City+age+5" class="ac" target="_blank"><div class="ai">🚒</div><h3>Age 5–7</h3><p>City, Friends, Classics</p></a>
-    <a href="https://www.bol.com/nl/nl/s/?searchtext=LEGO+Ninjago+Minecraft+8" class="ac" target="_blank"><div class="ai">⚔️</div><h3>Age 8–12</h3><p>Ninjago, Minecraft, Star Wars</p></a>
-    <a href="https://www.bol.com/nl/nl/s/?searchtext=LEGO+Technic+14" class="ac" target="_blank"><div class="ai">🔧</div><h3>Age 14+</h3><p>Technic, Architecture</p></a>
-    <a href="https://www.bol.com/nl/nl/s/?searchtext=LEGO+Icons+18" class="ac" target="_blank"><div class="ai">🏛️</div><h3>Age 18+</h3><p>Icons, Botanical, Art</p></a>
+<div id="results-section">
+  <div class="results-header">
+    <h2>Your <em>Best Matches</em></h2>
+    <p>Based on your answers — showing the top sets that fit you best</p>
+    <button class="restart-btn" onclick="restartQuiz()">← Start Over</button>
   </div>
+  <div class="legend">
+    <strong>Buttons:</strong>
+    <div class="ld"><div class="dot" style="background:var(--dark)"></div> Full details</div>
+    <div class="ld"><div class="dot" style="background:var(--amazon)"></div> Amazon.nl</div>
+    <div class="ld"><div class="dot" style="background:var(--bol)"></div> bol.com</div>
+  </div>
+  <div class="results-grid" id="results-grid"></div>
+  <div style="text-align:center;margin-top:2rem">
+    <button class="restart-btn" onclick="showBrowse()" style="background:var(--blue)">Browse All Sets →</button>
+  </div>
+</div>
+
+<!-- BROWSE ALL -->
+
+<div id="browse-section">
+  <div class="browse-header">
+    <div class="browse-title">Browse <em>All Sets</em></div>
+    <div class="browse-filters" id="bfilters"></div>
+  </div>
+  <div class="legend">
+    <strong>Buttons:</strong>
+    <div class="ld"><div class="dot" style="background:var(--dark)"></div> Full details</div>
+    <div class="ld"><div class="dot" style="background:var(--amazon)"></div> Amazon.nl</div>
+    <div class="ld"><div class="dot" style="background:var(--bol)"></div> bol.com</div>
+  </div>
+  <div class="results-grid" id="browse-grid"></div>
 </div>
 
 <!-- MODAL -->
 
-<div class="overlay" id="overlay" onclick="closeM(event)">
+<div class="ov" id="modal-ov" onclick="closeMod(event)">
   <div class="modal">
-    <div class="mimg">
-      <button class="mcls" onclick="closeD()">✕</button>
+    <div class="m-top">
+      <button class="m-cls" onclick="closeModD()">✕</button>
       <img id="mi" src="" alt=""/>
     </div>
-    <div class="mbody">
-      <div class="mtheme" id="mth"></div>
-      <div class="mtitle" id="mti"></div>
-      <div class="mmeta"  id="mme"></div>
-      <div class="mstars" id="mst"></div>
-      <div class="mdesc"  id="mde"></div>
-      <div class="mfeats"><h4>✅ Highlights</h4><ul id="mfe"></ul></div>
-      <div class="mprow"><div class="mprice" id="mpr"></div><div class="mpnote">starting price · compare stores</div></div>
-      <div class="mbgrp">
+    <div class="m-body">
+      <div class="m-sn" id="msn"></div>
+      <div class="m-title" id="mti"></div>
+      <div class="m-meta" id="mme"></div>
+      <div class="m-stars" id="mst"></div>
+      <div class="m-desc" id="mde"></div>
+      <div class="m-feats"><h4>✅ What's included</h4><ul id="mfe"></ul></div>
+      <div class="m-price" id="mpr"></div>
+      <div class="m-btns">
         <a id="mba" href="#" target="_blank" class="mba">🛒 Buy on Amazon.nl</a>
         <a id="mbb" href="#" target="_blank" class="mbb">🛒 Buy on bol.com</a>
       </div>
@@ -313,229 +373,582 @@ footer a:hover{color:var(--yellow)}
 </footer>
 
 <script>
-// ── ALL PRODUCTS ──────────────────────────────────────────────────────────────
-const THEMES = [
-  {
-    id:'city', icon:'🏙️', name:'LEGO City', color:'#006CB7',
-    sub:'The classic theme — emergency services, trains, space & more. Great for all ages.',
-    sets:[
-      {id:'c1',badge:'Best Value',bc:'b-green',title:'LEGO City Police Station',meta:'668 pcs · Age 6+ · Playset',price:'€79',stars:4,rev:'989',img:'https://images.unsplash.com/photo-1603732551658-5fabbafa84eb?w=500&q=80',desc:'A thrilling police adventure packed with a station, police car, motorbike and jail cell. Endlessly replayable for young builders — outstanding value.',feats:['Police car & motorbike','Jail cell with breakout feature','4 minifigures','Great value under €80'],amazon:'https://www.amazon.nl/s?k=LEGO+City+Police+Station&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+City+Police+Station'},
-      {id:'c2',badge:'🔥 New 2025',bc:'b-red',title:'LEGO City Central Train Station',meta:'1,153 pcs · Age 7+ · Modular',price:'€149',stars:5,rev:'421',img:'https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=500&q=80',desc:'The ultimate city train hub with working features, café, ticket hall, and platform details. Connects to City trains and other modular buildings beautifully.',feats:['Modular design connects to other City sets','Café & ticket office inside','1,153 pieces of city detail','Compatible with LEGO trains'],amazon:'https://www.amazon.nl/s?k=LEGO+City+Central+Train+Station+60469&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+City+Centraal+Station+60469'},
-      {id:'c3',badge:'',bc:'',title:'LEGO City Fire Station & Fire Truck',meta:'843 pcs · Age 6+ · Emergency',price:'€89',stars:4,rev:'1,245',img:'https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=500&q=80',desc:'A firefighters dream set — includes a two-storey fire station, fire engine with extending ladder, rescue drone and 6 minifigures. Action-packed play.',feats:['Full fire station + fire truck','Extending ladder & rescue drone','6 minifigures','Great for ages 6+'],amazon:'https://www.amazon.nl/s?k=LEGO+City+Fire+Station+60375&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+City+Brandweerkazerne'},
-    ]
-  },
-  {
-    id:'technic', icon:'⚙️', name:'LEGO Technic', color:'#E3000B',
-    sub:'Engineering-focused builds for those who love mechanisms, gears, and realism.',
-    sets:[
-      {id:'t1',badge:'Best Seller',bc:'b-red',title:'LEGO Technic Bugatti Bolide',meta:'905 pcs · Age 18+ · Advanced',price:'€179',stars:5,rev:'2,841',img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80',desc:'Masterclass in Technic engineering. Working 8-speed gearbox, W16 engine with moving pistons, and aerodynamic body. The ultimate car display model.',feats:['Working 8-speed gearbox','W16 engine with moving pistons','Aerodynamic Bugatti bodywork','Display stand included'],amazon:'https://www.amazon.nl/s?k=LEGO+Technic+Bugatti+Bolide&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Technic+Bugatti+Bolide'},
-      {id:'t2',badge:"Editor's Choice",bc:'b-blue',title:'LEGO Technic Land Rover Defender',meta:'2,573 pcs · Age 11+ · Scale model',price:'€199',stars:5,rev:'3,008',img:'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=500&q=80',desc:'Officially licensed Defender replica with working 4WD steering, independent suspension, and detailed V6 engine. One of the finest Technic sets ever made.',feats:['Officially licensed Land Rover','Working 4WD & steering','Independent suspension','Detailed V6 engine'],amazon:'https://www.amazon.nl/s?k=LEGO+Technic+Land+Rover+Defender&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Technic+Land+Rover+Defender'},
-      {id:'t3',badge:'🔥 New 2025',bc:'b-red',title:'LEGO Technic Mecha Team Leader',meta:'2,503 pcs · Age 14+ · Mech',price:'€249',stars:5,rev:'312',img:'https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=500&q=80',desc:'An epic posable mech figure with motorized features — Technic's most ambitious humanoid build. 2,503 pieces of pure engineering creativity.',feats:['2,503 pieces','Fully posable mech body','Motorized action features','Eye-catching display model'],amazon:'https://www.amazon.nl/s?k=LEGO+Technic+Mecha+Team+Leader&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Technic+Mech'},
-    ]
-  },
-  {
-    id:'starwars', icon:'🚀', name:'LEGO Star Wars', color:'#1a1a2e',
-    sub:"The galaxy's most popular licensed LEGO theme — 29 new sets in 2025 alone.",
-    sets:[
-      {id:'sw1',badge:'Iconic',bc:'b-dark',title:'LEGO Star Wars Millennium Falcon',meta:'7,541 pcs · Age 16+ · UCS',price:'€849',stars:5,rev:'4,562',img:'https://images.unsplash.com/photo-1608889335941-32ac5f2041b9?w=500&q=80',desc:'The most iconic spaceship in the galaxy, rebuilt in stunning detail. Detailed interior rooms, 6 legendary minifigures. The crown jewel of any Star Wars collection.',feats:['7,541 pieces','Detailed cockpit & interior','6 minifigures incl. Han Solo','Rotating satellite dish'],amazon:'https://www.amazon.nl/s?k=LEGO+Star+Wars+Millennium+Falcon+75192&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Star+Wars+Millennium+Falcon+75192'},
-      {id:'sw2',badge:'🔥 New 2025',bc:'b-red',title:'LEGO Star Wars UCS Death Star II',meta:'9,023 pcs · Age 18+ · Record set',price:'€999',stars:5,rev:'847',img:'https://images.unsplash.com/photo-1608889335941-32ac5f2041b9?w=500&q=80',desc:'The record-breaking first LEGO set to hit €1,000. With 9,023 pieces and 38 minifigures, the Death Star II is the most ambitious Star Wars set ever released.',feats:['9,023 pieces','38 minifigures — record number','Cross-section build reveals interior','Released October 2025'],amazon:'https://www.amazon.nl/s?k=LEGO+Star+Wars+Death+Star+II+75419&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Star+Wars+Death+Star+75419'},
-      {id:'sw3',badge:'Gift Idea',bc:'b-red',title:'LEGO Star Wars Mandalorian Helmet',meta:'584 pcs · Age 18+ · Display bust',price:'€69',stars:5,rev:'1,687',img:'https://images.unsplash.com/photo-1608889335941-32ac5f2041b9?w=500&q=80',desc:'This Is The Way — to a perfect display piece. Full-size Mandalorian helmet bust on a display plaque. A favourite gift for any Star Wars fan.',feats:['584 pieces','Display plaque included','2–3 hour build','Perfect gift under €70'],amazon:'https://www.amazon.nl/s?k=LEGO+Mandalorian+Helmet+75328&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Mandalorian+Helmet'},
-    ]
-  },
-  {
-    id:'icons', icon:'🏛️', name:'LEGO Icons', color:'#006CB7',
-    sub:'Display-worthy 18+ builds — landmarks, vehicles, and cultural icons.',
-    sets:[
-      {id:'i1',badge:"Editor's Choice",bc:'b-blue',title:'LEGO Icons Eiffel Tower',meta:'10,001 pcs · Age 18+ · Landmark',price:'€629',stars:5,rev:'1,204',img:'https://images.unsplash.com/photo-1543349689-9a4d426bee8e?w=500&q=80',desc:'Standing 1.5 metres tall — one of the largest LEGO sets ever made. Breathtaking lattice ironwork and interior detail. A showpiece for any room.',feats:['10,001 pieces','Over 1.5 m tall','Detailed lattice ironwork','Rotating display base'],amazon:'https://www.amazon.nl/s?k=LEGO+Icons+Eiffel+Tower+10307&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Icons+Eiffeltoren+10307'},
-      {id:'i2',badge:'',bc:'',title:'LEGO Icons Titanic',meta:'9,090 pcs · Age 18+ · Scale replica',price:'€729',stars:5,rev:'2,233',img:'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500&q=80',desc:'Over 1.3 metres long. Three cross-sections reveal the grand staircase, first-class cabins, and engine room. The most impressive ocean liner ever in LEGO.',feats:['9,090 pieces','Over 1.3 m long','Cross-section interiors','Grand staircase detail'],amazon:'https://www.amazon.nl/s?k=LEGO+Icons+Titanic+10294&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Icons+Titanic+10294'},
-      {id:'i3',badge:'🔥 2025',bc:'b-red',title:'LEGO Icons Tudor Corner (Modular)',meta:'3,266 pcs · Age 18+ · Modular building',price:'€229',stars:5,rev:'563',img:'https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=500&q=80',desc:'The 2025 modular building — a Tudor-style corner building with a florist, bookshop, and apartments. Connects to all other LEGO Modular Buildings.',feats:['3,266 pieces','Florist & bookshop inside','Modular — connects to other sets','Packed with hidden details'],amazon:'https://www.amazon.nl/s?k=LEGO+Icons+Tudor+Corner+10350&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Icons+Tudor+Corner+10350'},
-    ]
-  },
-  {
-    id:'hp', icon:'⚡', name:'LEGO Harry Potter', color:'#6B2D8B',
-    sub:'Beloved for years — enchanting sets from the Wizarding World.',
-    sets:[
-      {id:'h1',badge:'Most Popular',bc:'b-blue',title:'LEGO Hogwarts Castle',meta:'6,020 pcs · Age 14+ · Collector',price:'€469',stars:5,rev:'3,317',img:'https://images.unsplash.com/photo-1560942485-b2a11cc13456?w=500&q=80',desc:'The Great Hall, Dumbledore's office, Chamber of Secrets and more — 27 microfigures and 4 minifigures. The definitive Hogwarts experience.',feats:['6,020 pieces','27 microfigures + 4 minifigures','Multiple iconic locations','Modular design for display'],amazon:'https://www.amazon.nl/s?k=LEGO+Hogwarts+Castle+71043&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Hogwarts+Kasteel+71043'},
-      {id:'h2',badge:'🔥 2025',bc:'b-red',title:'LEGO Harry Potter Malfoy Manor',meta:'2,145 pcs · Age 14+ · New 2025',price:'€219',stars:5,rev:'298',img:'https://images.unsplash.com/photo-1560942485-b2a11cc13456?w=500&q=80',desc:'Brand new for 2025 — the sinister Malfoy Manor in stunning detail. Includes Lucius, Narcissa, Draco, Voldemort and other iconic characters.',feats:['2,145 pieces','Iconic manor with detailed rooms','Key villain minifigures','Aged stonework & dark aesthetics'],amazon:'https://www.amazon.nl/s?k=LEGO+Harry+Potter+Malfoy+Manor+76453&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Harry+Potter+Malfoy+Manor'},
-      {id:'h3',badge:'Gift Idea',bc:'b-red',title:'LEGO Hogwarts Express & Hogsmeade',meta:'1,074 pcs · Age 8+ · Playset',price:'€109',stars:4,rev:'2,104',img:'https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=500&q=80',desc:'The iconic scarlet steam train with Hogsmeade Station — a must for younger Harry Potter fans. Includes Harry, Ron, Hermione and Trolley Witch.',feats:['Train + Hogsmeade Station','4 iconic minifigures','Detailed train carriages','Compatible with LEGO train tracks'],amazon:'https://www.amazon.nl/s?k=LEGO+Hogwarts+Express+76423&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Hogwarts+Express+76423'},
-    ]
-  },
-  {
-    id:'ninjago', icon:'🐉', name:'LEGO Ninjago', color:'#E3000B',
-    sub:'15 years of ninja adventures — dragons, mechs, and epic temples.',
-    sets:[
-      {id:'n1',badge:'Best Seller',bc:'b-red',title:'LEGO Ninjago City Gardens',meta:'5,685 pcs · Age 14+ · Display',price:'€299',stars:5,rev:'1,872',img:'https://images.unsplash.com/photo-1575470384075-3d68a90b1a8b?w=500&q=80',desc:'Three floors of market stalls, rooftop gardens and ninja hideouts — 16 minifigures. Connects to Ninjago City and Ninjago City Docks for a mega display.',feats:['5,685 pieces across 3 levels','16 minifigures','Rooftop garden & market detail','Connects to other Ninjago City sets'],amazon:'https://www.amazon.nl/s?k=LEGO+Ninjago+City+Gardens+71741&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Ninjago+City+Gardens+71741'},
-      {id:'n2',badge:'Great Value',bc:'b-green',title:'LEGO Ninjago Dragon Stone Shrine',meta:'1,212 pcs · Age 9+ · Adventure',price:'€99',stars:4,rev:'634',img:'https://images.unsplash.com/photo-1575470384075-3d68a90b1a8b?w=500&q=80',desc:'An epic dragon shrine with hidden traps, secret chambers, and a posable dragon. Packed with minifigures and play features — great adventure set.',feats:['1,212 pieces','Posable dragon figure','Hidden traps & secret chamber','4 minifigures included'],amazon:'https://www.amazon.nl/s?k=LEGO+Ninjago+Dragon+Stone+Shrine&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Ninjago+Dragon+Stone+Shrine'},
-    ]
-  },
-  {
-    id:'minecraft', icon:'⛏️', name:'LEGO Minecraft', color:'#5D7C15',
-    sub:'Bringing the beloved game to life in brick form — endlessly creative.',
-    sets:[
-      {id:'m1',badge:'Best for Kids',bc:'b-blue',title:'LEGO Minecraft The Creeper Mine',meta:'834 pcs · Age 8+ · Adventure',price:'€59',stars:4,rev:'1,445',img:'https://images.unsplash.com/photo-1560419015-7c427e8ae5ba?w=500&q=80',desc:'Giant Creeper head, hidden TNT, working minecart and skeleton enemies. Endless play value and great value for a Minecraft fan.',feats:['Giant Creeper figure','Working minecart on tracks','Hidden TNT blast feature','3 minifigures + mobs'],amazon:'https://www.amazon.nl/s?k=LEGO+Minecraft+Creeper+Mine+21155&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Minecraft+Creeper+Mine'},
-      {id:'m2',badge:'🔥 New 2025',bc:'b-red',title:'LEGO Minecraft The Creeper (Figure)',meta:'665 pcs · Age 9+ · Buildable figure',price:'€49',stars:5,rev:'512',img:'https://images.unsplash.com/photo-1560419015-7c427e8ae5ba?w=500&q=80',desc:'Brand new 2025 — an 8-inch brick-built Creeper figure with hidden TNT inside and a nod to the Creeper\'s famous accidental creation story. Unique display piece.',feats:['665 pieces','8 inches tall','Hidden TNT inside','Reference to Creeper lore'],amazon:'https://www.amazon.nl/s?k=LEGO+Minecraft+The+Creeper+21276&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Minecraft+Creeper+21276'},
-    ]
-  },
-  {
-    id:'botanical', icon:'🌸', name:'LEGO Botanical', color:'#00a651',
-    sub:'The fastest-growing adult theme — beautiful plants that never need watering.',
-    sets:[
-      {id:'bo1',badge:'Most Popular',bc:'b-green',title:'LEGO Botanical Orchid',meta:'608 pcs · Age 18+ · Home décor',price:'€54',stars:5,rev:'2,104',img:'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=500&q=80',desc:'A lifelike orchid that never wilts. Elegant, calming build — perfect as home décor or a thoughtful gift. The best entry point to the Botanical Collection.',feats:['608 pieces','Never wilts — zero maintenance','Comes with display pot','Calming mindful build'],amazon:'https://www.amazon.nl/s?k=LEGO+Botanical+Orchid+10311&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Botanical+Orchid+10311'},
-      {id:'bo2',badge:'🔥 New 2025',bc:'b-green',title:'LEGO Botanical Happy Plants',meta:'376 pcs · Age 9+ · First 9+ Botanical',price:'€34',stars:5,rev:'387',img:'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=500&q=80',desc:'The first Botanical set aimed at age 9+ — a charming set of happy potted plants designed to attract a whole new generation of plant lovers to the theme.',feats:['376 pieces','First 9+ Botanical set','Bright cheerful design','Perfect starter gift'],amazon:'https://www.amazon.nl/s?k=LEGO+Botanical+Happy+Plants+10349&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Botanical+Happy+Plants+10349'},
-      {id:'bo3',badge:'',bc:'',title:'LEGO Botanical Dried Flower Centrepiece',meta:'812 pcs · Age 18+ · Table display',price:'€69',stars:5,rev:'943',img:'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=500&q=80',desc:'A stunning dried-flower arrangement with wild grasses, lavender, and more — buildable home décor that makes a sensational centrepiece or gift.',feats:['812 pieces','Realistic dried flowers','No watering needed','Beautiful gift for adults'],amazon:'https://www.amazon.nl/s?k=LEGO+Botanical+Dried+Flower+Centrepiece+10314&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Botanical+Droogbloemen'},
-    ]
-  },
-  {
-    id:'creator', icon:'🔨', name:'LEGO Creator 3-in-1', color:'#FF9900',
-    sub:'One box, three different builds — brilliant value for curious builders.',
-    sets:[
-      {id:'cr1',badge:'Best Value',bc:'b-green',title:'LEGO Creator Downtown Noodle Shop',meta:'569 pcs · Age 9+ · 3-in-1',price:'€39',stars:4,rev:'612',img:'https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=500&q=80',desc:'Rebuild as a noodle shop, hair salon, or toy store. Charming street-scene detail and incredible value — one of the best affordable LEGO sets available.',feats:['3 different builds','569 pieces','Detailed shopfront','Outstanding value under €40'],amazon:'https://www.amazon.nl/s?k=LEGO+Creator+Noodle+Shop+31131&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Creator+Noodle+Shop+31131'},
-      {id:'cr2',badge:'',bc:'',title:'LEGO Creator Vintage Motorcycle',meta:'1,478 pcs · Age 14+ · 3-in-1',price:'€109',stars:5,rev:'874',img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80',desc:'A beautiful vintage motorcycle with working steering and detailed engine — or rebuild it as a muscle car or air racer. Stunning display model either way.',feats:['1,478 pieces','Working steering','3 alternative builds','Detailed engine display'],amazon:'https://www.amazon.nl/s?k=LEGO+Creator+Vintage+Motorcycle+31135&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Creator+Vintage+Motorfiets'},
-    ]
-  },
-  {
-    id:'friends', icon:'💜', name:'LEGO Friends', color:'#E91E8C',
-    sub:'Story-driven sets built around friendship, animals, and community.',
-    sets:[
-      {id:'f1',badge:'Best Seller',bc:'b-red',title:'LEGO Friends Family Holiday Beach Resort',meta:'1,341 pcs · Age 8+ · Playset',price:'€119',stars:5,rev:'734',img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&q=80',desc:'A sprawling beach resort with a hotel, surf shack, and water sports — full of summer fun and friendship. One of the most popular 2025 Friends releases.',feats:['1,341 pieces','Hotel, surf shack & beach','Water sports equipment','Multiple minidolls'],amazon:'https://www.amazon.nl/s?k=LEGO+Friends+Family+Holiday+Beach+Resort&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Friends+Beach+Resort'},
-      {id:'f2',badge:'Great Value',bc:'b-green',title:'LEGO Friends Rescue Animal Sanctuary',meta:'580 pcs · Age 7+ · Animals',price:'€49',stars:4,rev:'512',img:'https://images.unsplash.com/photo-1516222338250-863216ce01ea?w=500&q=80',desc:'A heartwarming animal rescue centre with horses, cats, dogs and more. Teaches empathy and kindness alongside creative play.',feats:['580 pieces','Multiple rescue animals','Vet area & stables','Great starter Friends set'],amazon:'https://www.amazon.nl/s?k=LEGO+Friends+Animal+Rescue+Sanctuary&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Friends+Dierenasiel'},
-    ]
-  },
-  {
-    id:'marvel', icon:'🦸', name:'LEGO Marvel', color:'#ED1D24',
-    sub:'Assemble your collection with epic Marvel superhero sets.',
-    sets:[
-      {id:'ma1',badge:'🔥 New 2025',bc:'b-red',title:'LEGO Marvel Miles Morales Mask',meta:'694 pcs · Age 18+ · Display bust',price:'€79',stars:5,rev:'412',img:'https://images.unsplash.com/photo-1608889335941-32ac5f2041b9?w=500&q=80',desc:'A stunning display bust of Miles Morales\' Spider-Man mask — part of the 18+ Marvel bust series. A must-have for any Marvel fan\'s shelf.',feats:['694 pieces','Full-size mask bust','Detailed web texture','Display plaque'],amazon:'https://www.amazon.nl/s?k=LEGO+Marvel+Miles+Morales+Mask&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Marvel+Miles+Morales+Masker'},
-      {id:'ma2',badge:'',bc:'',title:'LEGO Marvel Avengers Tower',meta:'5,201 pcs · Age 14+ · Collector',price:'€499',stars:5,rev:'1,023',img:'https://images.unsplash.com/photo-1608889335941-32ac5f2041b9?w=500&q=80',desc:'The legendary Avengers HQ in jaw-dropping detail — 31 levels of iconic Marvel rooms, labs, and meeting areas. 31 minifigures included.',feats:['5,201 pieces','31 floors of Marvel HQ','31 minifigures — record number','Iconic scenes recreated'],amazon:'https://www.amazon.nl/s?k=LEGO+Marvel+Avengers+Tower+76269&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Marvel+Avengers+Tower+76269'},
-    ]
-  },
-  {
-    id:'disney', icon:'✨', name:'LEGO Disney', color:'#1E90FF',
-    sub:'22 new sets in 2025 — princesses, Pixar, and Disney Villains.',
-    sets:[
-      {id:'d1',badge:'🔥 2025',bc:'b-blue',title:'LEGO Disney Beauty and the Beast Castle',meta:'2,995 pcs · Age 14+ · Display',price:'€269',stars:5,rev:'623',img:'https://images.unsplash.com/photo-1560942485-b2a11cc13456?w=500&q=80',desc:'The enchanted castle in breathtaking detail with the famous ballroom, rose, and stained-glass window. Includes Belle, Beast, Lumière and friends.',feats:['2,995 pieces','Enchanted ballroom inside','Iconic stained-glass detail','6 Disney character figures'],amazon:'https://www.amazon.nl/s?k=LEGO+Disney+Beauty+Beast+Castle&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Disney+Belle+Kasteel'},
-      {id:'d2',badge:'',bc:'',title:'LEGO Disney Villains Cruella De Vil\'s Car',meta:'1,065 pcs · Age 18+ · Display',price:'€99',stars:5,rev:'314',img:'https://images.unsplash.com/photo-1560942485-b2a11cc13456?w=500&q=80',desc:'A sleek, sinister display model of Cruella\'s iconic car — part of the new Disney Villains 18+ series that launched to enormous enthusiasm in 2025.',feats:['1,065 pieces','Iconic villain car design','Disney Villains series','Includes Cruella figure'],amazon:'https://www.amazon.nl/s?k=LEGO+Disney+Cruella+Car&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Disney+Cruella'},
-    ]
-  },
-  {
-    id:'speed', icon:'🏎️', name:'LEGO Speed Champions', color:'#E3000B',
-    sub:'1:18 scale race cars — Formula 1, supercars, and iconic race liveries.',
-    sets:[
-      {id:'sp1',badge:'🔥 New 2025',bc:'b-red',title:'LEGO Speed Champions Ferrari F1 Car',meta:'672 pcs · Age 9+ · Formula 1',price:'€54',stars:5,rev:'891',img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80',desc:'Part of the huge 2025 Formula 1 wave — 10 new F1 cars launched in March. Officially licensed Ferrari livery with driver minifigure and pit garage detail.',feats:['Official Ferrari F1 livery','672 pieces','Driver minifigure','Part of 10-car F1 2025 wave'],amazon:'https://www.amazon.nl/s?k=LEGO+Speed+Champions+Ferrari+F1+2025&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Speed+Champions+Ferrari+F1'},
-      {id:'sp2',badge:'Best Value',bc:'b-green',title:'LEGO Speed Champions McLaren Solus GT',meta:'581 pcs · Age 9+ · Supercar',price:'€44',stars:4,rev:'723',img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80',desc:'The stunning McLaren Solus GT — a futuristic virtual concept car brought into brick reality. Great value, great detail, and a unique talking piece.',feats:['581 pieces','Futuristic canopy cockpit','Officially licensed McLaren','Driver minifigure included'],amazon:'https://www.amazon.nl/s?k=LEGO+Speed+Champions+McLaren+Solus+GT&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Speed+Champions+McLaren+Solus'},
-    ]
-  },
-  {
-    id:'ideas', icon:'💡', name:'LEGO Ideas', color:'#006CB7',
-    sub:'Fan-designed sets voted into production — unique, creative, and collectible.',
-    sets:[
-      {id:'id1',badge:'Fan Favourite',bc:'b-blue',title:'LEGO Ideas Polaroid OneStep SX-70',meta:'516 pcs · Age 18+ · Retro display',price:'€69',stars:5,rev:'987',img:'https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?w=500&q=80',desc:'A faithful brick-built recreation of the iconic Polaroid OneStep SX-70 camera — nostalgic, detailed and a wonderful display piece or gift for photography lovers.',feats:['516 pieces','Working film-eject mechanism','Accurate Polaroid livery','Includes display stand'],amazon:'https://www.amazon.nl/s?k=LEGO+Ideas+Polaroid+Camera&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Ideas+Polaroid'},
-      {id:'id2',badge:'',bc:'',title:'LEGO Ideas The Office',meta:'1,164 pcs · Age 18+ · TV Fan',price:'€119',stars:5,rev:'2,441',img:'https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?w=500&q=80',desc:'Dunder Mifflin in LEGO! Every desk, the conference room, and Michael\'s office recreated in loving detail. 15 minifigures of the full cast. Brilliant gift.',feats:['1,164 pieces','15 character minifigures','Detailed Dunder Mifflin office','Perfect gift for The Office fans'],amazon:'https://www.amazon.nl/s?k=LEGO+Ideas+The+Office+21336&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Ideas+The+Office+21336'},
-    ]
-  },
-  {
-    id:'duplo', icon:'🍼', name:'LEGO DUPLO', color:'#FF9900',
-    sub:'Safe, oversized bricks designed for little hands — ages 2 to 5.',
-    sets:[
-      {id:'du1',badge:'Best Starter',bc:'b-green',title:'LEGO DUPLO Classic Brick Box',meta:'65 pcs · Age 2+ · Open play',price:'€19',stars:5,rev:'3,891',img:'https://images.unsplash.com/photo-1603732551658-5fabbafa84eb?w=500&q=80',desc:'The ultimate starting point — 65 colourful DUPLO bricks in a handy storage box. No instructions, pure imagination. The best first LEGO gift for a toddler.',feats:['65 DUPLO bricks','Handy storage box','Bright mixed colours','Develops motor skills'],amazon:'https://www.amazon.nl/s?k=LEGO+DUPLO+Classic+Brick+Box+10913&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+DUPLO+Classic+Steenenset+10913'},
-      {id:'du2',badge:'',bc:'',title:'LEGO DUPLO Town Farm Animal Care',meta:'74 pcs · Age 2+ · Animals',price:'€29',stars:4,rev:'1,247',img:'https://images.unsplash.com/photo-1516222338250-863216ce01ea?w=500&q=80',desc:'A charming farm with animals to care for — horse, cow, pig and more. Develops nurturing instincts and imaginative play in toddlers.',feats:['74 DUPLO pieces','Farm animals to care for','Simple engaging play','Develops empathy & creativity'],amazon:'https://www.amazon.nl/s?k=LEGO+DUPLO+Farm+Animal+Care+10416&tag=YOUR_TAG',bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+DUPLO+Boerderij+Dieren'},
-    ]
-  },
+// ─────────────────────────────────────────────────────────────────
+// REAL LEGO DATABASE — set numbers from Brickset / BrickLink
+// Images: official LEGO CDN by set number (most reliable source)
+// ─────────────────────────────────────────────────────────────────
+function img(setNum){ return `https://www.lego.com/cdn/cs/set/assets/blt${setNum}/main.jpg`; }
+function imgBs(setNum){ return `https://images.brickset.com/sets/images/${setNum}-1.jpg`; }
+
+const SETS = [
+  // ── DUPLO ────────────────────────────────────────────────────
+  {sn:'10913',title:'LEGO DUPLO Classic Brick Box',theme:'DUPLO',year:2020,
+   pieces:65,minifigs:0,ageMin:2,price:19,rating:4.8,ratingCount:'3,891',
+   tags:['toddler','play'],interest:['city','gaming'],time:'quick',purpose:['play','gift'],
+   budget:['tiny'],
+   desc:'The ultimate toddler starter — 65 bright DUPLO bricks in a handy storage box. No instructions, pure imagination. The best first LEGO gift.',
+   feats:['65 DUPLO bricks in a box','Develops motor skills & colours','Compatible with all DUPLO sets','Ages 2–5'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+DUPLO+10913&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+DUPLO+10913'},
+
+  {sn:'10416',title:'LEGO DUPLO Farm Animal Care',theme:'DUPLO',year:2024,
+   pieces:74,minifigs:0,ageMin:2,price:29,rating:4.4,ratingCount:'1,247',
+   tags:['toddler','play','animals'],interest:['nature','city'],time:'quick',purpose:['play','gift'],
+   budget:['tiny'],
+   desc:'A charming DUPLO farm set with horses, cows, pigs and a caring farmer. Develops empathy and imaginative play in toddlers.',
+   feats:['74 DUPLO pieces','Horse, cow, pig & more','Simple engaging play scenes','Ages 2–5'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+DUPLO+10416&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+DUPLO+10416'},
+
+  // ── CITY ────────────────────────────────────────────────────
+  {sn:'60375',title:'LEGO City Fire Station & Fire Truck',theme:'City',year:2023,
+   pieces:843,minifigs:6,ageMin:6,price:89,rating:4.5,ratingCount:'1,245',
+   tags:['child','kid','play'],interest:['city','action'],time:'afternoon',purpose:['play','gift'],
+   budget:['mid'],
+   desc:'A full two-storey fire station with fire truck, extending ladder, rescue drone, and 6 minifigures. Action-packed play for young builders.',
+   feats:['843 pieces','Fire truck with extending ladder','Rescue drone included','6 firefighter minifigures'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+City+60375&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+City+60375'},
+
+  {sn:'60316',title:'LEGO City Police Station',theme:'City',year:2022,
+   pieces:668,minifigs:5,ageMin:6,price:79,rating:4.4,ratingCount:'989',
+   tags:['child','kid','play'],interest:['city','action'],time:'afternoon',purpose:['play','gift'],
+   budget:['small'],
+   desc:'A thrilling police HQ with police car, motorbike, jail cell breakout feature and 5 minifigures. Endlessly replayable.',
+   feats:['668 pieces','Police car & motorbike','Jail cell breakout','5 minifigures'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+City+Police+Station+60316&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+City+60316'},
+
+  {sn:'60469',title:'LEGO City Central Train Station',theme:'City',year:2025,
+   pieces:1153,minifigs:7,ageMin:7,price:149,rating:4.7,ratingCount:'421',
+   tags:['kid','play'],interest:['city','vehicles'],time:'afternoon',purpose:['play','display','gift'],
+   budget:['mid'],
+   desc:'The 2025 city hub — a stunning central train station with café, ticket hall, and platform. Connects to LEGO trains perfectly.',
+   feats:['1,153 pieces','Café & ticket office inside','Connects to LEGO City trains','7 minifigures'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+City+60469&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+City+60469'},
+
+  // ── CREATOR 3-IN-1 ──────────────────────────────────────────
+  {sn:'31131',title:'LEGO Creator Downtown Noodle Shop',theme:'Creator 3-in-1',year:2023,
+   pieces:569,minifigs:3,ageMin:9,price:39,rating:4.3,ratingCount:'612',
+   tags:['kid','teen'],interest:['city'],time:'afternoon',purpose:['play','display'],
+   budget:['tiny','small'],
+   desc:'Three builds from one set: noodle shop, hair salon, or toy store. Outstanding value with charming street-scene detail.',
+   feats:['3 alternative builds','569 pieces','Detailed shopfronts','3 minifigures'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Creator+31131&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Creator+31131'},
+
+  {sn:'31135',title:'LEGO Creator Vintage Motorcycle',theme:'Creator 3-in-1',year:2023,
+   pieces:1478,minifigs:0,ageMin:14,price:109,rating:4.6,ratingCount:'874',
+   tags:['teen','adult'],interest:['vehicles','display'],time:'afternoon',purpose:['display','gift'],
+   budget:['mid'],
+   desc:'Vintage motorcycle with working steering — or rebuild as a muscle car or air racer. A stunning display model any way you build it.',
+   feats:['1,478 pieces','3 alternative builds','Working steering','Detailed vintage engine'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Creator+31135&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Creator+31135'},
+
+  // ── TECHNIC ────────────────────────────────────────────────
+  {sn:'42140',title:'LEGO Technic App-Controlled Transformation Vehicle',theme:'Technic',year:2022,
+   pieces:772,minifigs:0,ageMin:10,price:79,rating:4.4,ratingCount:'743',
+   tags:['kid','teen'],interest:['vehicles'],time:'afternoon',purpose:['play','gift'],
+   budget:['small'],
+   desc:'App-controlled vehicle that transforms from off-roader to race car. Motorized, Bluetooth-controlled fun for tech-loving builders.',
+   feats:['772 pieces','App-controlled via Bluetooth','Transforms between two modes','Motor included'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Technic+42140&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Technic+42140'},
+
+  {sn:'42110',title:'LEGO Technic Land Rover Defender',theme:'Technic',year:2019,
+   pieces:2573,minifigs:0,ageMin:11,price:199,rating:4.8,ratingCount:'3,008',
+   tags:['teen','adult'],interest:['vehicles'],time:'weekend',purpose:['display','collect','gift'],
+   budget:['large'],
+   desc:'Officially licensed Defender with working 4WD steering, independent suspension, and detailed V6 engine with moving pistons.',
+   feats:['2,573 pieces','Working 4WD & steering','Independent suspension','Official Land Rover license'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Technic+42110&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Technic+42110'},
+
+  {sn:'42151',title:'LEGO Technic Bugatti Bolide',theme:'Technic',year:2023,
+   pieces:905,minifigs:0,ageMin:18,price:179,rating:4.7,ratingCount:'2,841',
+   tags:['adult'],interest:['vehicles','display'],time:'afternoon',purpose:['display','collect'],
+   budget:['large'],
+   desc:'Masterclass in engineering. Working 8-speed gearbox, W16 engine with moving pistons, and iconic Bolide aerodynamic body.',
+   feats:['905 pieces','Working 8-speed gearbox','W16 engine w/ moving pistons','Display stand included'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Technic+42151&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Technic+42151'},
+
+  // ── STAR WARS ────────────────────────────────────────────
+  {sn:'75328',title:'LEGO Star Wars The Mandalorian Helmet',theme:'Star Wars',year:2022,
+   pieces:584,minifigs:0,ageMin:18,price:69,rating:4.8,ratingCount:'1,687',
+   tags:['teen','adult'],interest:['action','display'],time:'quick',purpose:['display','gift'],
+   budget:['small'],
+   desc:'The Mandalorian helmet bust on a display plaque. This Is The Way — to a perfect gift for any Star Wars fan.',
+   feats:['584 pieces','Full-size display bust','Named display plaque','2–3 hour build'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Star+Wars+75328&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Star+Wars+75328'},
+
+  {sn:'75331',title:'LEGO Star Wars The Razor Crest',theme:'Star Wars',year:2022,
+   pieces:1023,minifigs:4,ageMin:18,price:129,rating:4.7,ratingCount:'1,234',
+   tags:['teen','adult'],interest:['action','display'],time:'afternoon',purpose:['display','collect','gift'],
+   budget:['mid'],
+   desc:'The Mandalorian\'s iconic ship in stunning 1,000+ piece detail. Opens to reveal the interior. Includes 4 minifigures with Mando and Grogu.',
+   feats:['1,023 pieces','Opens to reveal interior','Grogu (Baby Yoda) minifig','4 minifigures total'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Star+Wars+75331&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Star+Wars+75331'},
+
+  {sn:'75192',title:'LEGO Star Wars Millennium Falcon',theme:'Star Wars',year:2017,
+   pieces:7541,minifigs:8,ageMin:16,price:849,rating:4.9,ratingCount:'4,562',
+   tags:['teen','adult'],interest:['action','display'],time:'epic',purpose:['display','collect'],
+   budget:['epic'],
+   desc:'The most iconic spaceship ever, in ultimate detail. Detailed interior rooms, rotating dish, and 8 legendary minifigures including Han Solo.',
+   feats:['7,541 pieces','Detailed cockpit & interior','8 minifigures incl. Han Solo','Rotating satellite dish'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Star+Wars+75192&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Star+Wars+75192'},
+
+  {sn:'75367',title:'LEGO Star Wars Venator-Class Republic Attack Cruiser',theme:'Star Wars',year:2023,
+   pieces:5374,minifigs:6,ageMin:18,price:649,rating:4.8,ratingCount:'876',
+   tags:['adult'],interest:['action','display'],time:'epic',purpose:['display','collect'],
+   budget:['epic'],
+   desc:'The iconic Star Wars Cruiser in breathtaking detail. Over 5,300 pieces with detailed bridge, hangar bay and 6 Clone Wars minifigures.',
+   feats:['5,374 pieces','Detailed bridge & hangar','6 Clone Wars minifigures','Display stand included'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Star+Wars+75367&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Star+Wars+75367'},
+
+  // ── HARRY POTTER ────────────────────────────────────────────
+  {sn:'76423',title:'LEGO Harry Potter Hogwarts Express & Hogsmeade Station',theme:'Harry Potter',year:2023,
+   pieces:1074,minifigs:5,ageMin:8,price:109,rating:4.5,ratingCount:'2,104',
+   tags:['kid','teen'],interest:['fantasy'],time:'afternoon',purpose:['play','display','gift'],
+   budget:['mid'],
+   desc:'The scarlet Hogwarts Express with Hogsmeade Station — includes Harry, Ron, Hermione, Draco and the Trolley Witch.',
+   feats:['1,074 pieces','Train + Hogsmeade Station','5 iconic minifigures','Compatible with LEGO train tracks'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Harry+Potter+76423&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Harry+Potter+76423'},
+
+  {sn:'71043',title:'LEGO Harry Potter Hogwarts Castle',theme:'Harry Potter',year:2018,
+   pieces:6020,minifigs:4,ageMin:16,price:469,rating:4.9,ratingCount:'3,317',
+   tags:['teen','adult'],interest:['fantasy','display'],time:'epic',purpose:['display','collect'],
+   budget:['epic'],
+   desc:'The definitive Hogwarts — Great Hall, Dumbledore\'s office, Chamber of Secrets. 27 microfigures, 4 minifigures.',
+   feats:['6,020 pieces','27 microfigures + 4 minifigures','Multiple iconic locations','Modular display design'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Harry+Potter+71043&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Harry+Potter+71043'},
+
+  {sn:'76453',title:'LEGO Harry Potter Malfoy Manor',theme:'Harry Potter',year:2025,
+   pieces:2145,minifigs:8,ageMin:14,price:219,rating:4.8,ratingCount:'298',
+   tags:['teen','adult'],interest:['fantasy','display'],time:'weekend',purpose:['display','collect','gift'],
+   budget:['large'],
+   desc:'Brand new 2025 — the sinister Malfoy Manor. Dark stonework, dramatic rooms, Voldemort, Lucius, Draco and more key characters.',
+   feats:['2,145 pieces','Dramatic dark stonework','8 villain minifigures','New 2025 release'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Harry+Potter+76453&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Harry+Potter+76453'},
+
+  // ── ICONS ─────────────────────────────────────────────────
+  {sn:'10326',title:'LEGO Icons Natural History Museum',theme:'Icons',year:2024,
+   pieces:4014,minifigs:9,ageMin:18,price:299,rating:4.2,ratingCount:'255',
+   tags:['adult'],interest:['display','city'],time:'weekend',purpose:['display','collect'],
+   budget:['large'],
+   desc:'A stunning modular recreation of a neoclassical natural history museum. Fossils, dinosaurs, and 9 minifigures inside. Extraordinary detail.',
+   feats:['4,014 pieces','Neoclassical architecture','Dinosaurs & fossils inside','9 minifigures'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Icons+10326&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Icons+10326'},
+
+  {sn:'10327',title:'LEGO Icons Dune Atreides Royal Ornithopter',theme:'Icons',year:2024,
+   pieces:1369,minifigs:8,ageMin:18,price:164,rating:4.6,ratingCount:'278',
+   tags:['adult','teen'],interest:['action','display'],time:'afternoon',purpose:['display','collect','gift'],
+   budget:['mid'],
+   desc:'The iconic Dune ornithopter with folding wings and 8 minifigures including Paul, Lady Jessica, and Baron Harkonnen.',
+   feats:['1,369 pieces','Folding wing mechanism','8 Dune character minifigures','Display stand included'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Icons+10327&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Icons+10327'},
+
+  {sn:'10307',title:'LEGO Icons Eiffel Tower',theme:'Icons',year:2022,
+   pieces:10001,minifigs:0,ageMin:18,price:629,rating:4.8,ratingCount:'1,204',
+   tags:['adult'],interest:['display'],time:'epic',purpose:['display','collect'],
+   budget:['epic'],
+   desc:'Over 1.5 metres tall and 10,001 pieces. One of the largest LEGO sets ever made — breathtaking lattice ironwork, rotating display base.',
+   feats:['10,001 pieces','Over 1.5m tall','Detailed lattice ironwork','Rotating display base'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Icons+10307&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Icons+10307'},
+
+  {sn:'10294',title:'LEGO Icons Titanic',theme:'Icons',year:2021,
+   pieces:9090,minifigs:0,ageMin:18,price:729,rating:4.9,ratingCount:'2,233',
+   tags:['adult'],interest:['display'],time:'epic',purpose:['display','collect'],
+   budget:['epic'],
+   desc:'Over 1.3 metres long. Three cross-sections reveal grand staircase, first-class cabins, and engine room. Monumental.',
+   feats:['9,090 pieces','Over 1.3m long','Cross-section interiors','Grand staircase detail'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Icons+10294&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Icons+10294'},
+
+  {sn:'10350',title:'LEGO Icons Tudor Corner Modular Building',theme:'Icons',year:2025,
+   pieces:3266,minifigs:6,ageMin:18,price:229,rating:4.8,ratingCount:'563',
+   tags:['adult'],interest:['city','display'],time:'weekend',purpose:['display','collect'],
+   budget:['large'],
+   desc:'The 2025 modular building — a Tudor-style corner with florist and bookshop. Connects to all other modular buildings.',
+   feats:['3,266 pieces','Florist & bookshop inside','Connects to all modular sets','6 minifigures'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Icons+10350&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Icons+10350'},
+
+  // ── BOTANICAL ────────────────────────────────────────────
+  {sn:'10328',title:'LEGO Icons Bouquet of Roses',theme:'Botanical',year:2024,
+   pieces:822,minifigs:0,ageMin:18,price:59,rating:4.0,ratingCount:'150',
+   tags:['adult'],interest:['nature'],time:'afternoon',purpose:['display','gift'],
+   budget:['small'],
+   desc:'A stunning brick-built bouquet of roses that never wilts. Beautifully detailed petals and leaves — perfect Valentine\'s or anniversary gift.',
+   feats:['822 pieces','Detailed rose petals & leaves','Never wilts','Ideal gift for adults'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Icons+10328&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Icons+10328'},
+
+  {sn:'10329',title:'LEGO Icons Tiny Plants',theme:'Botanical',year:2024,
+   pieces:758,minifigs:0,ageMin:18,price:49,rating:4.2,ratingCount:'231',
+   tags:['adult'],interest:['nature'],time:'afternoon',purpose:['display','gift'],
+   budget:['tiny','small'],
+   desc:'Nine different tiny succulents and cacti in individual pots. Beautifully calm to build, and stunning on any desk or shelf.',
+   feats:['758 pieces','9 different tiny plants','Zero maintenance','Desk display set'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Icons+10329&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Icons+10329'},
+
+  {sn:'10311',title:'LEGO Icons Orchid',theme:'Botanical',year:2022,
+   pieces:608,minifigs:0,ageMin:18,price:54,rating:4.8,ratingCount:'2,104',
+   tags:['adult'],interest:['nature'],time:'afternoon',purpose:['display','gift'],
+   budget:['small'],
+   desc:'A lifelike orchid that never needs watering. Elegant, calming build — perfect home décor or thoughtful gift.',
+   feats:['608 pieces','Realistic petals & leaves','Comes with display pot','Calming mindful build'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Botanical+10311&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Botanical+10311'},
+
+  // ── NINJAGO ──────────────────────────────────────────────
+  {sn:'71741',title:'LEGO Ninjago City Gardens',theme:'Ninjago',year:2021,
+   pieces:5685,minifigs:16,ageMin:14,price:299,rating:4.9,ratingCount:'1,872',
+   tags:['teen','adult'],interest:['action','display'],time:'epic',purpose:['display','collect'],
+   budget:['large'],
+   desc:'Three floors of market stalls, rooftop gardens and ninja hideouts. 16 minifigures — connects to Ninjago City for an epic display.',
+   feats:['5,685 pieces','16 minifigures','3 display levels','Connects to Ninjago City'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Ninjago+71741&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Ninjago+71741'},
+
+  {sn:'71799',title:'LEGO Ninjago City Markets',theme:'Ninjago',year:2023,
+   pieces:6163,minifigs:21,ageMin:14,price:349,rating:4.9,ratingCount:'687',
+   tags:['teen','adult'],interest:['action','display'],time:'epic',purpose:['display','collect'],
+   budget:['large'],
+   desc:'The largest Ninjago City set ever — 6,163 pieces and 21 minifigures across a sprawling market district. An incredible display.',
+   feats:['6,163 pieces','21 minifigures — record!','Sprawling market district','Connects to City Gardens'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Ninjago+71799&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Ninjago+71799'},
+
+  // ── MINECRAFT ────────────────────────────────────────────
+  {sn:'21155',title:'LEGO Minecraft The Creeper Mine',theme:'Minecraft',year:2019,
+   pieces:834,minifigs:3,ageMin:8,price:59,rating:4.4,ratingCount:'1,445',
+   tags:['kid'],interest:['gaming'],time:'afternoon',purpose:['play','gift'],
+   budget:['small'],
+   desc:'Giant Creeper head, hidden TNT, working minecart and skeleton enemies. Endless play value for any Minecraft fan.',
+   feats:['834 pieces','Giant Creeper figure','Working minecart','3 minifigures + mobs'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Minecraft+21155&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Minecraft+21155'},
+
+  {sn:'21276',title:'LEGO Minecraft The Creeper (Buildable Figure)',theme:'Minecraft',year:2025,
+   pieces:665,minifigs:0,ageMin:9,price:49,rating:4.8,ratingCount:'512',
+   tags:['kid','teen'],interest:['gaming','display'],time:'quick',purpose:['display','gift'],
+   budget:['tiny','small'],
+   desc:'New 2025 — an 8-inch brick-built Creeper with hidden TNT inside. A unique display piece and great gift for Minecraft fans.',
+   feats:['665 pieces','8 inches tall','Hidden TNT inside','2025 release'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Minecraft+21276&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Minecraft+21276'},
+
+  // ── FRIENDS ──────────────────────────────────────────────
+  {sn:'42629',title:'LEGO Friends Heartlake City Hospital',theme:'Friends',year:2024,
+   pieces:1045,minifigs:7,ageMin:8,price:99,rating:4.5,ratingCount:'423',
+   tags:['child','kid'],interest:['city'],time:'afternoon',purpose:['play','gift'],
+   budget:['mid'],
+   desc:'A fully equipped hospital with emergency room, operating room, café and ambulance. Teaches caring through creative play.',
+   feats:['1,045 pieces','Emergency & operating rooms','Ambulance included','7 minidolls'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Friends+42629&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Friends+42629'},
+
+  {sn:'41730',title:'LEGO Friends Autumn\'s House',theme:'Friends',year:2023,
+   pieces:853,minifigs:6,ageMin:8,price:79,rating:4.4,ratingCount:'734',
+   tags:['child','kid'],interest:['city'],time:'afternoon',purpose:['play','gift'],
+   budget:['small'],
+   desc:'A cosy three-storey home with kitchen, bedroom, bathroom and garden. Full of friendly details and great for imaginative play.',
+   feats:['853 pieces','3-storey house','Garden & outdoor area','6 minidolls & pets'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Friends+41730&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Friends+41730'},
+
+  // ── MARVEL ──────────────────────────────────────────────
+  {sn:'76269',title:'LEGO Marvel Avengers Tower',theme:'Marvel',year:2023,
+   pieces:5201,minifigs:31,ageMin:18,price:499,rating:4.8,ratingCount:'1,023',
+   tags:['adult','teen'],interest:['action','display'],time:'epic',purpose:['display','collect'],
+   budget:['epic'],
+   desc:'Legendary Avengers HQ — 31 floors, 31 minifigures. Labs, meeting rooms, and iconic Marvel scenes recreated in incredible detail.',
+   feats:['5,201 pieces','31 minifigures — record!','31 floors of Marvel HQ','Iconic scenes recreated'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Marvel+76269&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Marvel+76269'},
+
+  {sn:'76261',title:'LEGO Marvel Spider-Man\'s Amazing Spider-Crawler',theme:'Marvel',year:2023,
+   pieces:2113,minifigs:8,ageMin:18,price:229,rating:4.7,ratingCount:'634',
+   tags:['adult','teen'],interest:['action','display'],time:'weekend',purpose:['display','collect','gift'],
+   budget:['large'],
+   desc:'An enormous buildable Spider-Crawler with 8 posable mechanical spider legs. Includes 8 Spider-Man suit variants — a collector\'s dream.',
+   feats:['2,113 pieces','8 posable spider legs','8 Spider-Man minifigures','Impressive display size'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Marvel+76261&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Marvel+76261'},
+
+  // ── SPEED CHAMPIONS ─────────────────────────────────────
+  {sn:'76919',title:'LEGO Speed Champions McLaren Solus GT & F1 LM',theme:'Speed Champions',year:2023,
+   pieces:581,minifigs:2,ageMin:9,price:44,rating:4.5,ratingCount:'723',
+   tags:['kid','teen'],interest:['vehicles'],time:'quick',purpose:['play','display','gift'],
+   budget:['tiny','small'],
+   desc:'Two iconic McLarens — the futuristic Solus GT and the legendary F1 LM — in one box. Great value racing set.',
+   feats:['581 pieces','Two McLaren cars','2 racing drivers','Quick satisfying build'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Speed+Champions+76919&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Speed+Champions+76919'},
+
+  {sn:'76330',title:'LEGO Speed Champions Ferrari & Lamborghini Showdown',theme:'Speed Champions',year:2024,
+   pieces:1233,minifigs:2,ageMin:9,price:79,rating:4.6,ratingCount:'512',
+   tags:['kid','teen'],interest:['vehicles'],time:'afternoon',purpose:['play','display','gift'],
+   budget:['small'],
+   desc:'An epic supercar showdown — a Ferrari vs a Lamborghini, both in stunning Speed Champions detail with a showroom garage.',
+   feats:['1,233 pieces','Ferrari + Lamborghini','Showroom garage build','2 racing drivers'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Speed+Champions+76330&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Speed+Champions+76330'},
+
+  // ── IDEAS ────────────────────────────────────────────────
+  {sn:'21336',title:'LEGO Ideas The Office',theme:'Ideas',year:2022,
+   pieces:1164,minifigs:15,ageMin:18,price:119,rating:4.9,ratingCount:'2,441',
+   tags:['adult'],interest:['display','city'],time:'afternoon',purpose:['display','gift','collect'],
+   budget:['mid'],
+   desc:'Dunder Mifflin in LEGO! Every desk, the conference room and Michael\'s office. 15 minifigures of the full cast.',
+   feats:['1,164 pieces','15 character minifigures','Detailed Dunder Mifflin office','Perfect gift for The Office fans'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Ideas+21336&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Ideas+21336'},
+
+  {sn:'21347',title:'LEGO Ideas Vincent van Gogh – The Starry Night',theme:'Ideas',year:2023,
+   pieces:2316,minifigs:1,ageMin:18,price:169,rating:4.8,ratingCount:'1,876',
+   tags:['adult'],interest:['display','nature'],time:'weekend',purpose:['display','collect','gift'],
+   budget:['large'],
+   desc:'Van Gogh\'s Starry Night recreated in 3D LEGO — a swirling, layered masterpiece. Comes with a Van Gogh minifigure at his easel.',
+   feats:['2,316 pieces','3D layered artwork','Van Gogh minifig at easel','Ready to hang on wall'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Ideas+21347&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Ideas+21347'},
+
+  // ── DISNEY ────────────────────────────────────────────────
+  {sn:'43222',title:'LEGO Disney Princess Castle',theme:'Disney',year:2023,
+   pieces:4837,minifigs:12,ageMin:18,price:399,rating:4.8,ratingCount:'987',
+   tags:['adult','teen'],interest:['fantasy','display'],time:'epic',purpose:['display','collect','gift'],
+   budget:['large'],
+   desc:'A magical fairytale castle with interiors representing 5 Disney princess stories. 12 minifigures including Belle, Cinderella, Ariel and more.',
+   feats:['4,837 pieces','5 Disney princess stories inside','12 princess minifigures','Magical display model'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Disney+43222&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Disney+43222'},
+
+  {sn:'10331',title:'LEGO Icons Kingfisher Bird',theme:'Botanical',year:2024,
+   pieces:636,minifigs:0,ageMin:18,price:54,rating:4.7,ratingCount:'423',
+   tags:['adult'],interest:['nature','display'],time:'afternoon',purpose:['display','gift'],
+   budget:['small'],
+   desc:'A vivid brick-built kingfisher perched on a branch — part of the growing LEGO bird display series. Strikingly colourful and serene to build.',
+   feats:['636 pieces','Vivid blue & orange kingfisher','Display branch included','Part of bird series'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Icons+10331&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Icons+10331'},
+
+  {sn:'10330',title:'LEGO Icons McLaren MP4/4 & Ayrton Senna',theme:'Icons',year:2024,
+   pieces:693,minifigs:1,ageMin:18,price:79,rating:4.1,ratingCount:'174',
+   tags:['adult','teen'],interest:['vehicles','display'],time:'afternoon',purpose:['display','collect','gift'],
+   budget:['small'],
+   desc:'The legendary McLaren MP4/4 — the most successful F1 car ever — with Ayrton Senna minifigure and trophy podium. An icon.',
+   feats:['693 pieces','Official McLaren/Senna license','Trophy podium included','Working steering'],
+   amazon:'https://www.amazon.nl/s?k=LEGO+Icons+10330&tag=YOUR_TAG',
+   bol:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Icons+10330'},
 ];
 
-// ── RENDER ALL THEME SECTIONS ────────────────────────────────
-function stars(n){return '★'.repeat(n)+'☆'.repeat(5-n)}
+// ─── QUIZ STATE ───────────────────────────────────────────
+const answers = {};
+const steps = [null,'age','budget','interest','time','purpose'];
 
-const wrap = document.getElementById('sections');
-THEMES.forEach(theme=>{
-  const sec = document.createElement('div');
-  sec.className='theme-section'; sec.id=theme.id;
-  sec.innerHTML=`
-    <div class="theme-header">
-      <div class="theme-icon">${theme.icon}</div>
-      <div class="theme-title" style="color:${theme.color}">${theme.name.replace('LEGO ','LEGO <em>').replace(/(<em>[^<]+)$/,'$1</em>')}</div>
-    </div>
-    <p class="theme-sub">${theme.sub}</p>
-    <div class="grid" id="grid-${theme.id}"></div>`;
-  wrap.appendChild(sec);
-  const grid=sec.querySelector(`#grid-${theme.id}`);
-  theme.sets.forEach(p=>{
-    const c=document.createElement('div'); c.className='card';
-    c.innerHTML=`
-      <div class="cimg">
-        ${p.badge?`<div class="badge ${p.bc}">${p.badge}</div>`:''}
-        <img src="${p.img}" alt="${p.title}" loading="lazy"/>
-      </div>
-      <div class="cbody">
-        <div class="ctheme">${theme.name}</div>
-        <div class="ctitle">${p.title}</div>
-        <div class="cmeta">${p.meta}</div>
-        <div class="cstars">${stars(p.stars)}<span>(${p.rev} reviews)</span></div>
-        <div class="cdesc">${p.desc.substring(0,100)}…</div>
-        <div class="cfoot">
-          <div class="prow"><div class="price">${p.price}</div><div class="pnote">starting price</div></div>
-          <div class="bgrp">
-            <button class="btn-d" onclick="openM('${p.id}')">📋 Details</button>
-            <a class="btn-a" href="${p.amazon}" target="_blank">🛒 Amazon</a>
-            <a class="btn-b" href="${p.bol}"    target="_blank">🛒 bol.com</a>
-          </div>
-        </div>
-      </div>`;
-    grid.appendChild(c);
+function pick(step, key, val, el){
+  // deselect previous
+  document.querySelectorAll(`#q${step} .q-opt`).forEach(o=>o.classList.remove('chosen'));
+  el.classList.add('chosen');
+  answers[key] = val;
+  document.getElementById(`n${step}`).classList.add('ready');
+}
+
+function goTo(step){
+  document.querySelectorAll('.q-card').forEach(c=>c.classList.remove('active'));
+  document.getElementById(`q${step}`).classList.add('active');
+  const pct = ((step-1)/5)*100;
+  document.getElementById('pbar').style.width = pct+'%';
+  document.getElementById('quiz-section').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ─── SCORING ─────────────────────────────────────────────
+function scoreSet(s){
+  const {age,budget,interest,time,purpose} = answers;
+  let score = 0;
+
+  // Age
+  const ageMap = {toddler:2,child:5,kid:8,teen:13,adult:18};
+  const minAge = ageMap[age]||2;
+  if(s.ageMin <= minAge && s.ageMin >= minAge - 6) score += 30;
+  else if(s.ageMin <= minAge) score += 15;
+  else score -= 20; // too advanced
+
+  // Budget
+  if(s.budget.includes(budget)) score += 30;
+  else score -= 15;
+
+  // Interest
+  if(s.interest.includes(interest)) score += 25;
+  else score += 0;
+
+  // Time
+  const timeMap = {quick:500,afternoon:1500,weekend:4000,epic:99999};
+  const maxPcs = timeMap[time]||999;
+  const minPcs = time==='quick'?0 : timeMap[{quick:null,afternoon:'quick',weekend:'afternoon',epic:'weekend'}[time]]||0;
+  if(s.pieces <= maxPcs && s.pieces > minPcs) score += 20;
+  else if(Math.abs(s.pieces - maxPcs) < 500) score += 8;
+
+  // Purpose
+  if(s.purpose && s.purpose.includes(purpose)) score += 20;
+
+  return score;
+}
+
+function showResults(){
+  document.getElementById('pbar').style.width='100%';
+
+  const scored = SETS.map(s=>({...s, score:scoreSet(s)}))
+    .filter(s=>s.score > 40)
+    .sort((a,b)=>b.score-a.score)
+    .slice(0,5);
+
+  const grid = document.getElementById('results-grid');
+  grid.innerHTML = '';
+
+  if(scored.length === 0){
+    grid.innerHTML='<p style="color:var(--muted);font-weight:700;grid-column:1/-1">No perfect matches found — try adjusting your budget or age range. <button onclick="restartQuiz()" class="restart-btn">Start Over</button></p>';
+  } else {
+    const labels=['🥇 Best Match','🥈 Great Match','🥉 Good Match','✅ Also Fits','✅ Also Fits'];
+    scored.forEach((s,i)=>{
+      grid.appendChild(makeCard(s, labels[i]||'✅ Also Fits', i===0));
+    });
+  }
+
+  document.getElementById('quiz-section').style.display='none';
+  document.getElementById('results-section').style.display='block';
+  document.getElementById('results-section').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ─── BROWSE ALL ───────────────────────────────────────────
+const allThemes = [...new Set(SETS.map(s=>s.theme))].sort();
+
+function showBrowse(){
+  const bf = document.getElementById('bfilters');
+  if(!bf.children.length){
+    const allBtn = document.createElement('button');
+    allBtn.className='bf on'; allBtn.textContent='All';
+    allBtn.onclick=function(){
+      document.querySelectorAll('.bf').forEach(b=>b.classList.remove('on'));
+      this.classList.add('on');
+      renderBrowse('all');
+    };
+    bf.appendChild(allBtn);
+    allThemes.forEach(t=>{
+      const b=document.createElement('button');
+      b.className='bf'; b.textContent=t;
+      b.onclick=function(){
+        document.querySelectorAll('.bf').forEach(b=>b.classList.remove('on'));
+        this.classList.add('on');
+        renderBrowse(t);
+      };
+      bf.appendChild(b);
+    });
+    renderBrowse('all');
+  }
+  document.getElementById('browse-section').style.display='block';
+  document.getElementById('browse-section').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function renderBrowse(theme){
+  const g = document.getElementById('browse-grid');
+  g.innerHTML='';
+  SETS.filter(s=>theme==='all'||s.theme===theme).forEach(s=>{
+    g.appendChild(makeCard(s,'',false));
   });
-});
+}
 
-// ── MODAL ────────────────────────────────────────────────────
-const allSets = THEMES.flatMap(t=>t.sets.map(s=>({...s,themeName:t.name})));
-function openM(id){
-  const p=allSets.find(x=>x.id===id);
-  document.getElementById('mi').src=p.img;
-  document.getElementById('mi').alt=p.title;
-  document.getElementById('mth').textContent=p.themeName;
-  document.getElementById('mti').textContent=p.title;
-  document.getElementById('mme').textContent=p.meta;
-  document.getElementById('mst').innerHTML=stars(p.stars)+` <span>(${p.rev} reviews)</span>`;
-  document.getElementById('mde').textContent=p.desc;
-  document.getElementById('mpr').textContent=p.price;
-  document.getElementById('mba').href=p.amazon;
-  document.getElementById('mbb').href=p.bol;
-  document.getElementById('mfe').innerHTML=p.feats.map(f=>`<li>${f}</li>`).join('');
-  document.getElementById('overlay').classList.add('open');
+// ─── CARD FACTORY ─────────────────────────────────────────
+function stars(n){ return '★'.repeat(Math.round(n))+'☆'.repeat(5-Math.round(n)); }
+
+function makeCard(s, label, top){
+  const div = document.createElement('div');
+  div.className='rc';
+  // Use Brickset CDN image which is reliable and public
+  const imgSrc = `https://images.brickset.com/sets/images/${s.sn}-1.jpg`;
+  const why = label ? `${label} — matches your age, budget & interest` : '';
+  div.innerHTML=`
+    <div class="rc-img">
+      ${label?`<div class="match-badge">${label}</div>`:''}
+      <div class="set-num-badge">#${s.sn}</div>
+      <img src="${imgSrc}" alt="${s.title}" loading="lazy"
+        onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=LEGO+${s.sn}'"/>
+    </div>
+    <div class="rc-body">
+      <div class="rc-theme">${s.theme}</div>
+      <div class="rc-title">${s.title}</div>
+      <div class="rc-meta">
+        <span class="rc-tag">📦 ${s.pieces} pcs</span>
+        <span class="rc-tag">🎂 Age ${s.ageMin}+</span>
+        ${s.minifigs>0?`<span class="rc-tag">👤 ${s.minifigs} figs</span>`:''}
+        <span class="rc-tag">📅 ${s.year}</span>
+      </div>
+      <div class="rc-stars">${stars(s.rating)} <span>(${s.ratingCount} reviews)</span></div>
+      ${why?`<div class="rc-why">${why}</div>`:`<div class="rc-why" style="background:#f5f3ef;border-color:#ddd;color:#666">${s.desc.substring(0,90)}…</div>`}
+      <div class="rc-foot">
+        <div class="rc-price">€${s.price} <span>starting price</span></div>
+        <div class="rc-btns">
+          <button class="btn-detail" onclick="openMod('${s.sn}')">📋 Details</button>
+          <a class="btn-am" href="${s.amazon}" target="_blank">🛒 Amazon</a>
+          <a class="btn-bo" href="${s.bol}" target="_blank">🛒 bol.com</a>
+        </div>
+      </div>
+    </div>`;
+  return div;
+}
+
+// ─── MODAL ────────────────────────────────────────────────
+function openMod(sn){
+  const s = SETS.find(x=>x.sn===sn);
+  const imgSrc = `https://images.brickset.com/sets/images/${sn}-1.jpg`;
+  document.getElementById('mi').src = imgSrc;
+  document.getElementById('mi').onerror = function(){ this.src=`https://via.placeholder.com/300x200?text=LEGO+${sn}`; };
+  document.getElementById('msn').textContent = `Set #${sn} · ${s.theme} · ${s.year}`;
+  document.getElementById('mti').textContent = s.title;
+  document.getElementById('mme').textContent = `${s.pieces} pieces · Age ${s.ageMin}+ · ${s.minifigs>0?s.minifigs+' minifigures':'No minifigures'}`;
+  document.getElementById('mst').innerHTML = stars(s.rating)+` <span>(${s.ratingCount} reviews)</span>`;
+  document.getElementById('mde').textContent = s.desc;
+  document.getElementById('mpr').innerHTML = `€${s.price} <span>starting price · compare stores below</span>`;
+  document.getElementById('mba').href = s.amazon;
+  document.getElementById('mbb').href = s.bol;
+  document.getElementById('mfe').innerHTML = s.feats.map(f=>`<li>${f}</li>`).join('');
+  document.getElementById('modal-ov').classList.add('open');
   document.body.style.overflow='hidden';
 }
-function closeM(e){if(e.target===document.getElementById('overlay'))closeD()}
-function closeD(){document.getElementById('overlay').classList.remove('open');document.body.style.overflow=''}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeD()});
+function closeMod(e){ if(e.target===document.getElementById('modal-ov')) closeModD(); }
+function closeModD(){ document.getElementById('modal-ov').classList.remove('open'); document.body.style.overflow=''; }
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModD(); });
 
-// ── JUMP ─────────────────────────────────────────────────────
-function jump(id){
-  const el=document.getElementById(id);
-  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+// ─── RESTART ─────────────────────────────────────────────
+function restartQuiz(){
+  Object.keys(answers).forEach(k=>delete answers[k]);
+  document.querySelectorAll('.q-opt').forEach(o=>o.classList.remove('chosen'));
+  document.querySelectorAll('.btn-next').forEach(b=>b.classList.remove('ready'));
+  document.getElementById('results-section').style.display='none';
+  document.getElementById('browse-section').style.display='none';
+  document.getElementById('quiz-section').style.display='block';
+  goTo(1);
+  document.getElementById('quiz-section').scrollIntoView({behavior:'smooth',block:'start'});
 }
 
-// ── BACK TO TOP ───────────────────────────────────────────────
+// ─── BACK TO TOP ──────────────────────────────────────────
 const tot=document.getElementById('tot');
-window.addEventListener('scroll',()=>{tot.classList.toggle('show',window.scrollY>500)});
-
-// ── QUIZ ─────────────────────────────────────────────────────
-const QS={};
-const QR={
-  child:{low:{n:'LEGO DUPLO Classic Brick Box',a:'https://www.amazon.nl/s?k=LEGO+DUPLO+Brick+Box&tag=YOUR_TAG',b:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+DUPLO+Classic+Brick+Box'},mid:{n:'LEGO City Fire Station',a:'https://www.amazon.nl/s?k=LEGO+City+Fire+Station&tag=YOUR_TAG',b:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+City+Brandweerkazerne'},high:{n:'LEGO Friends Beach Resort',a:'https://www.amazon.nl/s?k=LEGO+Friends+Beach+Resort&tag=YOUR_TAG',b:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Friends+Beach+Resort'}},
-  kid:{low:{n:'LEGO Minecraft Creeper Mine',a:'https://www.amazon.nl/s?k=LEGO+Minecraft+Creeper+Mine&tag=YOUR_TAG',b:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Minecraft+Creeper+Mine'},mid:{n:'LEGO Ninjago Dragon Stone Shrine',a:'https://www.amazon.nl/s?k=LEGO+Ninjago+Dragon+Stone+Shrine&tag=YOUR_TAG',b:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Ninjago+Dragon'},high:{n:'LEGO Star Wars Mandalorian Helmet',a:'https://www.amazon.nl/s?k=LEGO+Mandalorian+Helmet&tag=YOUR_TAG',b:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Mandalorian+Helm'}},
-  teen:{low:{n:'LEGO Speed Champions McLaren Solus',a:'https://www.amazon.nl/s?k=LEGO+Speed+Champions+McLaren+Solus&tag=YOUR_TAG',b:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Speed+Champions+McLaren'},mid:{n:'LEGO Technic Land Rover Defender',a:'https://www.amazon.nl/s?k=LEGO+Technic+Land+Rover&tag=YOUR_TAG',b:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Technic+Land+Rover'},high:{n:'LEGO Hogwarts Castle',a:'https://www.amazon.nl/s?k=LEGO+Hogwarts+Castle+71043&tag=YOUR_TAG',b:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Hogwarts+Kasteel+71043'},premium:{n:'LEGO Star Wars Millennium Falcon',a:'https://www.amazon.nl/s?k=LEGO+Millennium+Falcon+75192&tag=YOUR_TAG',b:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Millennium+Falcon+75192'}},
-  adult:{low:{n:'LEGO Botanical Orchid',a:'https://www.amazon.nl/s?k=LEGO+Botanical+Orchid+10311&tag=YOUR_TAG',b:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Botanical+Orchid+10311'},mid:{n:'LEGO Technic Bugatti Bolide',a:'https://www.amazon.nl/s?k=LEGO+Technic+Bugatti+Bolide&tag=YOUR_TAG',b:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Technic+Bugatti+Bolide'},high:{n:'LEGO Icons Titanic',a:'https://www.amazon.nl/s?k=LEGO+Icons+Titanic+10294&tag=YOUR_TAG',b:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Titanic+10294'},premium:{n:'LEGO Icons Eiffel Tower',a:'https://www.amazon.nl/s?k=LEGO+Icons+Eiffel+Tower+10307&tag=YOUR_TAG',b:'https://www.bol.com/nl/nl/s/?searchtext=LEGO+Eiffeltoren+10307'}},
-};
-function qpick(type,val,btn){
-  document.querySelectorAll(`#q${type[0]} .qo`).forEach(b=>b.classList.remove('sel'));
-  btn.classList.add('sel'); QS[type]=val;
-  if(QS.age&&QS.budget){
-    const g=QR[QS.age]; const r=g[QS.budget]||g[Object.keys(g)[0]];
-    document.getElementById('qtxt').textContent='We recommend: '+r.n;
-    document.getElementById('qa-a').href=r.a; document.getElementById('qa-b').href=r.b;
-    const el=document.getElementById('qres'); el.style.display='block';
-    el.scrollIntoView({behavior:'smooth',block:'nearest'});
-  }
-}
+window.addEventListener('scroll',()=>tot.classList.toggle('show',scrollY>400));
 </script>
 
 </body>
