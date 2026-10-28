@@ -220,7 +220,7 @@ footer a{color:var(--text3)}.footer a:hover{color:var(--text2)}
     <a href="#" onclick="showBrowse();return false" data-t="n_br">Browse All</a>
     <a href="privacy.html" data-t="n_pr">Privacy</a>
     <a href="affiliate-disclosure.html" data-t="n_di">Disclosure</a>
-    <a href="#quiz-section" class="nav-pill" onclick="restartQuiz()" data-t="n_fs">Find My Set</a>
+    <a href="#" class="nav-pill" onclick="restartQuiz();return false" data-t="n_fs">Find My Set</a>
   </div>
 </nav>
 
@@ -858,15 +858,26 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModD();closeCo
 
 // ══ RESTART ══
 function restartQuiz(){
+  // Clear all answers
   Object.keys(ANS).forEach(k=>delete ANS[k]);
+  // Reset quiz option selections
   document.querySelectorAll('.q-o').forEach(o=>o.classList.remove('on'));
+  // Reset all next buttons to disabled state
   document.querySelectorAll('.btn-nx').forEach(b=>b.classList.remove('rdy'));
+  // Hide results and browse, show quiz
   document.getElementById('results-section').style.display='none';
   document.getElementById('browse-section').style.display='none';
   document.getElementById('quiz-section').style.display='block';
+  // Clear quick pick highlights
   document.querySelectorAll('.qp-btn').forEach(b=>b.classList.remove('active'));
-  goTo(1);
-  document.getElementById('quiz-section').scrollIntoView({behavior:'smooth',block:'start'});
+  // Reset progress bar explicitly
+  document.getElementById('pbar').style.width='0%';
+  document.getElementById('p-lbl').textContent=t('step').replace('{n}','1');
+  // Show only step 1
+  document.querySelectorAll('.q-card').forEach(c=>c.classList.remove('active'));
+  document.getElementById('q1').classList.add('active');
+  // Scroll to quiz
+  setTimeout(()=>document.getElementById('quiz-section').scrollIntoView({behavior:'smooth',block:'start'}),50);
 }
 
 // ══ BACK TO TOP ══
