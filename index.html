@@ -682,15 +682,43 @@ function goTo(step){
 function scoreSet(s){
   const{age,budget,interest,time,purpose}=ANS;
   let sc=0;
-  const am={toddler:2,child:5,kid:8,teen:13,adult:18};
-  const mn=am[age]||2;
-  if(s.ag<=mn&&s.ag>=mn-6)sc+=35;else if(s.ag<=mn)sc+=18;else sc-=30;
-  if(s.bg.includes(budget))sc+=30;else sc-=20;
-  if(s.in.includes(interest))sc+=25;
-  const tm={quick:500,afternoon:1500,weekend:4000,epic:99999};
-  const pm={quick:0,afternoon:500,weekend:1500,epic:4000};
-  if(s.pc<=tm[time]&&s.pc>pm[time])sc+=20;else if(Math.abs(s.pc-tm[time])<500)sc+=8;
-  if(s.pu&&s.pu.includes(purpose))sc+=20;
+
+  // AGE — use ag_t array (exact match to quiz answer keys)
+  if(age){
+    if(s.ag_t.includes(age))sc+=40;          // perfect age group match
+    else sc-=25;                              // wrong age group — hard penalty
+  }
+
+  // BUDGET — bg array contains the budget buckets this set fits
+  if(budget){
+    if(s.bg.includes(budget))sc+=30;         // exact budget match
+    else{
+      // adjacent bucket: only mild penalty
+      const order=['tiny','small','mid','large','epic'];
+      const bi=order.indexOf(budget);
+      const si=order.findIndex(b=>s.bg.includes(b));
+      const dist=Math.abs(bi-si);
+      if(dist===1)sc-=8;                     // one step off — still show
+      else sc-=22;                           // too far off budget
+    }
+  }
+
+  // INTEREST — in array contains interest keys
+  if(interest){
+    if(s.in.includes(interest))sc+=25;       // theme match
+  }
+
+  // BUILD TIME — based on piece count ranges
+  if(time){
+    const tmMax={quick:500,afternoon:1500,weekend:4000,epic:99999};
+    const tmMin={quick:0,afternoon:500,weekend:1500,epic:4000};
+    if(s.pc<=tmMax[time]&&s.pc>tmMin[time])sc+=20;
+    else if(Math.abs(s.pc-tmMax[time])<400)sc+=8;
+  }
+
+  // PURPOSE — pu array
+  if(purpose&&s.pu&&s.pu.includes(purpose))sc+=15;
+
   return sc;
 }
 function showResults(rerender){
